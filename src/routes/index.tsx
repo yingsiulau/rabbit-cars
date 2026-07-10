@@ -1,12 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake, Gauge, Fuel, Calendar } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import catAutos from "@/assets/cat-autos.jpg";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
-import car1 from "@/assets/car-1.jpg";
-import car2 from "@/assets/car-2.jpg";
-import car3 from "@/assets/car-3.jpg";
+import { vehicles } from "@/data/vehicles";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -14,32 +12,7 @@ export const Route = createFileRoute("/")({
 
 const brands = ["PORSCHE", "AUDI", "BMW", "MERCEDES-BENZ", "VW", "FERRARI", "LAND ROVER", "TESLA"];
 
-const vehicles = [
-  {
-    img: car1,
-    name: "Audi RS6 Avant",
-    edition: "Performance Edition",
-    year: "2023",
-    tags: ["12'500 KM", "HYBRID", "630 PS"],
-    price: "CHF 148'500",
-  },
-  {
-    img: car2,
-    name: "Porsche Taycan 4S",
-    edition: "Cross Turismo",
-    year: "2022",
-    tags: ["18'200 KM", "ELEKTRO", "571 PS"],
-    price: "CHF 112'900",
-  },
-  {
-    img: car3,
-    name: "Mercedes-AMG G63",
-    edition: "Night Package",
-    year: "2021",
-    tags: ["34'000 KM", "BENZIN", "585 PS"],
-    price: "CHF 185'000",
-  },
-];
+const featured = vehicles.slice(0, 6);
 
 function Index() {
   return (
@@ -166,34 +139,38 @@ function Index() {
       <section id="occasionen" className="py-24 bg-panel/30 border-y border-border">
         <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap gap-6 justify-between items-end">
           <div className="max-w-[46ch]">
-            <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {vehicles.length} Fahrzeuge</span>
             <h2 className="text-4xl font-display font-medium">Ausgewählte Occasionen</h2>
           </div>
-          <a href="https://rabbit-cars.ch/occasionen/" className="text-sm text-accent underline underline-offset-4 inline-flex items-center gap-2">
-            Zum Occasionspark <ArrowRight className="size-4" />
-          </a>
+          <Link to="/occasionen" className="text-sm text-accent underline underline-offset-4 inline-flex items-center gap-2">
+            Alle {vehicles.length} ansehen <ArrowRight className="size-4" />
+          </Link>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {vehicles.map((v) => (
-            <article key={v.name} className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all">
+          {featured.map((v) => (
+            <a
+              key={v.id}
+              href={v.detailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all"
+            >
               <div className="aspect-[4/3] overflow-hidden bg-background">
-                <img src={v.img} alt={v.name} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={v.image} alt={v.name} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
               <div className="p-6 space-y-4 flex-1 flex flex-col">
                 <div>
                   <div className="flex justify-between items-start gap-4">
-                    <h4 className="font-display font-medium text-xl">{v.name}</h4>
-                    <span className="text-muted-foreground text-sm">{v.year}</span>
+                    <h4 className="font-display font-medium text-lg leading-tight">{v.name}</h4>
+                    <span className="text-muted-foreground text-xs whitespace-nowrap pt-1">{v.firstRegistration}</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">{v.edition}</p>
+                  <p className="text-muted-foreground text-xs mt-2 line-clamp-2">{v.highlights}</p>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {v.tags.map((t) => (
-                    <span key={t} className="px-2 py-1 bg-muted rounded text-[10px] text-muted-foreground tracking-wider">
-                      {t}
-                    </span>
-                  ))}
+                <div className="grid grid-cols-3 gap-2 text-[10px] text-muted-foreground tracking-wider">
+                  <span className="inline-flex items-center gap-1"><Gauge className="size-3" />{v.km}</span>
+                  <span className="inline-flex items-center gap-1"><Fuel className="size-3" />{v.fuel}</span>
+                  <span className="inline-flex items-center gap-1"><Calendar className="size-3" />{v.power.split(" ")[0]} PS</span>
                 </div>
                 <div className="pt-4 mt-auto flex justify-between items-center border-t border-border">
                   <span className="text-lg font-display">{v.price}</span>
@@ -202,10 +179,11 @@ function Index() {
                   </span>
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </section>
+
 
       {/* Trust / Warum */}
       <section id="warum" className="py-24 max-w-7xl mx-auto px-6">
