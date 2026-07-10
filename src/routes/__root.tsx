@@ -77,14 +77,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Rabbit-Cars – Ihr Occasionsspezialist in Gümligen seit über 40 Jahren" },
+      { name: "description", content: "Rabbit-Cars in Gümligen bei Bern: Familienbetrieb mit über 40 Jahren Tradition. Autos, Camper & Vans, Motorräder – geprüfte Occasionen und persönliche Beratung." },
+      { name: "author", content: "Rabbit-Cars" },
+      { property: "og:title", content: "Rabbit-Cars – Occasionen mit Charakter" },
+      { property: "og:description", content: "Über 40 Jahre Familientradition. Ihr zuverlässiger Partner rund um Occasionsfahrzeuge in Gümligen." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
