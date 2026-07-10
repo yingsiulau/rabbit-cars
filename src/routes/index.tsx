@@ -12,32 +12,7 @@ export const Route = createFileRoute("/")({
 
 const brands = ["PORSCHE", "AUDI", "BMW", "MERCEDES-BENZ", "VW", "FERRARI", "LAND ROVER", "TESLA"];
 
-const vehicles = [
-  {
-    img: car1,
-    name: "Audi RS6 Avant",
-    edition: "Performance Edition",
-    year: "2023",
-    tags: ["12'500 KM", "HYBRID", "630 PS"],
-    price: "CHF 148'500",
-  },
-  {
-    img: car2,
-    name: "Porsche Taycan 4S",
-    edition: "Cross Turismo",
-    year: "2022",
-    tags: ["18'200 KM", "ELEKTRO", "571 PS"],
-    price: "CHF 112'900",
-  },
-  {
-    img: car3,
-    name: "Mercedes-AMG G63",
-    edition: "Night Package",
-    year: "2021",
-    tags: ["34'000 KM", "BENZIN", "585 PS"],
-    price: "CHF 185'000",
-  },
-];
+const featured = vehicles.slice(0, 6);
 
 function Index() {
   return (
