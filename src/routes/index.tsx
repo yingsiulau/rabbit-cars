@@ -1,12 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake, Gauge, Fuel, Calendar } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import catAutos from "@/assets/cat-autos.jpg";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
-import car1 from "@/assets/car-1.jpg";
-import car2 from "@/assets/car-2.jpg";
-import car3 from "@/assets/car-3.jpg";
+import { vehicles } from "@/data/vehicles";
 
 export const Route = createFileRoute("/")({
   component: Index,
