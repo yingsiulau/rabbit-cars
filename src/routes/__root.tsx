@@ -80,10 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Rabbit-Cars – Ihr Occasionsspezialist in Gümligen seit über 40 Jahren" },
       { name: "description", content: "Rabbit-Cars in Gümligen bei Bern: Familienbetrieb mit über 40 Jahren Tradition. Autos, Camper & Vans, Motorräder – geprüfte Occasionen und persönliche Beratung." },
       { name: "author", content: "Rabbit-Cars" },
-      { property: "og:title", content: "Rabbit-Cars – Occasionen mit Charakter" },
-      { property: "og:description", content: "Über 40 Jahre Familientradition. Ihr zuverlässiger Partner rund um Occasionsfahrzeuge in Gümligen." },
+      { property: "og:title", content: "Rabbit-Cars – Ihr Occasionsspezialist in Gümligen seit über 40 Jahren" },
+      { property: "og:description", content: "Rabbit-Cars in Gümligen bei Bern: Familienbetrieb mit über 40 Jahren Tradition. Autos, Camper & Vans, Motorräder – geprüfte Occasionen und persönliche Beratung." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rabbit-Cars – Ihr Occasionsspezialist in Gümligen seit über 40 Jahren" },
+      { name: "twitter:description", content: "Rabbit-Cars in Gümligen bei Bern: Familienbetrieb mit über 40 Jahren Tradition. Autos, Camper & Vans, Motorräder – geprüfte Occasionen und persönliche Beratung." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c0fd0ff4-b0a0-4d83-b107-d9c896a8fb40" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c0fd0ff4-b0a0-4d83-b107-d9c896a8fb40" },
     ],
     links: [
       {
