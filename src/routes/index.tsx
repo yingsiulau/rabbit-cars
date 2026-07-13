@@ -251,6 +251,20 @@ function Index() {
                   <p className="text-lg"><a href="mailto:info@rabbit-cars.ch" className="hover:text-accent">info@rabbit-cars.ch</a></p>
                 </div>
               </div>
+              <div className="flex gap-4">
+                <Clock className="size-5 text-accent shrink-0 mt-1" />
+                <div>
+                  <span className="text-xs text-muted-foreground uppercase tracking-widest">Öffnungszeiten</span>
+                  <div className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm mt-1">
+                    <span className="text-muted-foreground">Mo–Fr</span>
+                    <span>07:30–12:00, 13:00–18:00</span>
+                    <span className="text-muted-foreground">Samstag</span>
+                    <span>09:00–12:30</span>
+                    <span className="text-muted-foreground">Sonntag</span>
+                    <span className="text-muted-foreground">Geschlossen</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
