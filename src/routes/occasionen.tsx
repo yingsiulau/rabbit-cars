@@ -22,13 +22,13 @@ function OccasionenPage() {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="block h-8">
+          <Link to="/" className="block h-6 sm:h-7">
             <img
               src={logoAsset.url}
               alt="Rabbit-Cars"
               className="h-full w-auto brightness-0 invert"
-              width={500}
-              height={113}
+              width={600}
+              height={120}
             />
           </Link>
           <Link to="/" className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2">

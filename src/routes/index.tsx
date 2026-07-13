@@ -21,13 +21,13 @@ function Index() {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="block h-8">
+          <a href="#top" className="block h-6 sm:h-7">
             <img
               src={logoAsset.url}
               alt="Rabbit-Cars"
               className="h-full w-auto brightness-0 invert"
-              width={500}
-              height={113}
+              width={600}
+              height={120}
             />
           </a>
           <div className="hidden sm:flex gap-8">
@@ -286,9 +286,9 @@ function Index() {
           <img
             src={logoAsset.url}
             alt="Rabbit-Cars"
-            className="h-7 w-auto brightness-0 invert opacity-80"
-            width={500}
-            height={113}
+            className="h-6 w-auto brightness-0 invert opacity-80"
+            width={600}
+            height={120}
           />
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Rabbit-Cars · Ihr Occasionsspezialist in Gümligen</p>
           <div className="flex gap-6">
