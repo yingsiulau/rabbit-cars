@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Gauge, Fuel, Zap, Cog } from "lucide-react";
+import logoAsset from "@/assets/rabbit-cars-logo.png.asset.json";
 import { vehicles } from "@/data/vehicles";
 
 export const Route = createFileRoute("/occasionen")({
@@ -21,8 +22,14 @@ function OccasionenPage() {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="font-display font-semibold tracking-tighter text-xl">
-            RABBIT<span className="text-muted-foreground">-CARS</span>
+          <Link to="/" className="block h-8">
+            <img
+              src={logoAsset.url}
+              alt="Rabbit-Cars"
+              className="h-full w-auto brightness-0 invert"
+              width={500}
+              height={113}
+            />
           </Link>
           <Link to="/" className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2">
             <ArrowLeft className="size-4" /> Zurück
