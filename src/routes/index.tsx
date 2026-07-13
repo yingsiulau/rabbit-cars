@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake, Gauge, Fuel, Calendar } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
-import catAutos from "@/assets/cat-autos.jpg";
+import catAutos from "@/assets/hero-lambo.jpg.asset.json";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
+import logoAsset from "@/assets/rabbit-cars-logo.png.asset.json";
 import { vehicles } from "@/data/vehicles";
 
 export const Route = createFileRoute("/")({
@@ -20,8 +21,14 @@ function Index() {
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="font-display font-semibold tracking-tighter text-xl">
-            RABBIT<span className="text-muted-foreground">-CARS</span>
+          <a href="#top" className="block h-8">
+            <img
+              src={logoAsset.url}
+              alt="Rabbit-Cars"
+              className="h-full w-auto brightness-0 invert"
+              width={500}
+              height={113}
+            />
           </a>
           <div className="hidden sm:flex gap-8">
             <a href="#top" className="text-sm font-medium hover:text-accent transition-colors">Home</a>
@@ -103,7 +110,7 @@ function Index() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <a href="#occasionen" className="md:col-span-2 group relative h-96 overflow-hidden rounded-xl ring-1 ring-border">
-            <img src={catAutos} alt="Autos" loading="lazy" width={1200} height={900} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src={catAutos.url} alt="Autos" loading="lazy" width={1200} height={900} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <span className="text-xs uppercase tracking-widest text-muted-foreground mb-2">01 — Fahrzeuge</span>
@@ -262,7 +269,13 @@ function Index() {
       {/* Footer */}
       <footer className="py-12 border-t border-border">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <span className="font-display font-semibold tracking-tighter text-lg">RABBIT-CARS</span>
+          <img
+            src={logoAsset.url}
+            alt="Rabbit-Cars"
+            className="h-7 w-auto brightness-0 invert opacity-80"
+            width={500}
+            height={113}
+          />
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Rabbit-Cars · Ihr Occasionsspezialist in Gümligen</p>
           <div className="flex gap-6">
             <a href="#kontakt" className="text-xs text-muted-foreground hover:text-foreground transition-colors uppercase tracking-widest">Impressum</a>
