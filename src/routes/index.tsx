@@ -17,12 +17,14 @@ const brands = ["PORSCHE", "AUDI", "BMW", "MERCEDES-BENZ", "VW", "FERRARI", "LAN
 const featured = vehicles.slice(0, 6);
 
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
   return (
     <div className="bg-background text-foreground selection:bg-accent/30 selection:text-foreground">
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <a href="#top" className="block h-6 sm:h-7">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+          <a href="#top" className="block h-6 sm:h-7 shrink-0" onClick={closeMenu}>
             <img
               src={logoAsset.url}
               alt="Rabbit-Cars"
@@ -37,15 +39,48 @@ function Index() {
             <a href="#warum" className="text-sm font-medium hover:text-accent transition-colors">Über uns</a>
             <a href="#kontakt" className="text-sm font-medium hover:text-accent transition-colors">Kontakt</a>
           </div>
-          <a
-            href="tel:+41793006060"
-            className="text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent transition-colors inline-flex items-center gap-2"
-          >
-            <Phone className="size-3.5" />
-            Termin
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="tel:+41793006060"
+              className="hidden sm:inline-flex text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent transition-colors items-center gap-2"
+            >
+              <Phone className="size-3.5" />
+              Termin
+            </a>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label={menuOpen ? "Menü schliessen" : "Menü öffnen"}
+              aria-expanded={menuOpen}
+              className="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-sm border border-border hover:bg-panel transition-colors"
+            >
+              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
+        </div>
+        {/* Mobile menu */}
+        <div
+          className={`sm:hidden overflow-hidden border-t border-border transition-[max-height] duration-300 ease-out ${
+            menuOpen ? "max-h-96" : "max-h-0"
+          }`}
+        >
+          <div className="px-6 py-4 flex flex-col gap-1 bg-background/95">
+            <a href="#top" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Home</a>
+            <a href="#occasionen" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Occasionen</a>
+            <a href="#warum" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Über uns</a>
+            <a href="#kontakt" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Kontakt</a>
+            <a
+              href="tel:+41793006060"
+              onClick={closeMenu}
+              className="mt-3 text-sm font-medium bg-primary text-primary-foreground py-3 px-4 rounded-sm ring-1 ring-primary hover:bg-accent transition-colors inline-flex items-center justify-center gap-2"
+            >
+              <Phone className="size-3.5" />
+              Termin vereinbaren
+            </a>
+          </div>
         </div>
       </nav>
+
 
       {/* Hero */}
       <section id="top" className="relative min-h-[92vh] flex flex-col justify-end pb-24 pt-32 overflow-hidden">
