@@ -42,7 +42,7 @@ function Index() {
           <div className="flex items-center gap-2">
             <a
               href="tel:+41793006060"
-              className="hidden sm:inline-flex text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent transition-colors items-center gap-2"
+              className="hidden sm:inline-flex text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Phone className="size-3.5" />
               Termin
@@ -52,7 +52,7 @@ function Index() {
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Menü schliessen" : "Menü öffnen"}
               aria-expanded={menuOpen}
-              className="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-sm border border-border hover:bg-panel transition-colors"
+              className="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-sm border border-border hover:bg-panel hover:border-accent/40 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -60,19 +60,21 @@ function Index() {
         </div>
         {/* Mobile menu */}
         <div
-          className={`sm:hidden overflow-hidden border-t border-border transition-[max-height] duration-300 ease-out ${
-            menuOpen ? "max-h-96" : "max-h-0"
+          className={`sm:hidden overflow-hidden border-t border-border bg-background/95 transition-all duration-300 ease-out ${
+            menuOpen
+              ? "max-h-96 opacity-100 translate-y-0"
+              : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
           }`}
         >
-          <div className="px-6 py-4 flex flex-col gap-1 bg-background/95">
-            <a href="#top" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Home</a>
-            <a href="#occasionen" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Occasionen</a>
-            <a href="#warum" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Über uns</a>
-            <a href="#kontakt" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent transition-colors border-b border-border/50">Kontakt</a>
+          <div className="px-6 py-4 flex flex-col gap-1">
+            <a href="#top" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Home</a>
+            <a href="#occasionen" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Occasionen</a>
+            <a href="#warum" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Über uns</a>
+            <a href="#kontakt" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Kontakt</a>
             <a
               href="tel:+41793006060"
               onClick={closeMenu}
-              className="mt-3 text-sm font-medium bg-primary text-primary-foreground py-3 px-4 rounded-sm ring-1 ring-primary hover:bg-accent transition-colors inline-flex items-center justify-center gap-2"
+              className="mt-3 text-sm font-medium bg-primary text-primary-foreground py-3 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Phone className="size-3.5" />
               Termin vereinbaren
