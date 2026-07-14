@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake, Gauge, Fuel, Calendar, Menu, X } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import catAutos from "@/assets/hero-lambo.jpg.asset.json";
