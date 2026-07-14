@@ -19,6 +19,50 @@ const featured = vehicles.slice(0, 6);
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const menu = menuRef.current;
+    if (!menu) return;
+
+    const focusableSelector =
+      'a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), details, [tabindex]:not([tabindex="-1"])';
+
+    const focusables = Array.from(menu.querySelectorAll<HTMLElement>(focusableSelector));
+    focusables[0]?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setMenuOpen(false);
+        toggleRef.current?.focus();
+        return;
+      }
+      if (e.key !== "Tab") return;
+
+      const focusables = Array.from(menu.querySelectorAll<HTMLElement>(focusableSelector)).filter(
+        (el) => el.offsetParent !== null
+      );
+      if (focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+
+    menu.addEventListener("keydown", handleKeyDown);
+    return () => menu.removeEventListener("keydown", handleKeyDown);
+  }, [menuOpen]);
+
   return (
     <div className="bg-background text-foreground selection:bg-accent/30 selection:text-foreground">
       {/* Nav */}
