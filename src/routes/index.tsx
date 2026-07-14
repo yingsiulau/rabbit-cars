@@ -66,7 +66,7 @@ function Index() {
   return (
     <div className="bg-background text-foreground selection:bg-accent/30 selection:text-foreground">
       {/* Nav */}
-      <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
+      <nav aria-label="Hauptnavigation" className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
           <a href="#top" className="block h-6 sm:h-7 shrink-0" onClick={closeMenu}>
             <img
@@ -88,43 +88,60 @@ function Index() {
               href="tel:+41793006060"
               className="hidden sm:inline-flex text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <Phone className="size-3.5" />
+              <Phone className="size-3.5" aria-hidden="true" />
               Termin
             </a>
             <button
+              ref={toggleRef}
               type="button"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? "Menü schliessen" : "Menü öffnen"}
               aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
               className="sm:hidden inline-flex items-center justify-center h-10 w-10 rounded-sm border border-border hover:bg-panel hover:border-accent/40 active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+              {menuOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
         {/* Mobile menu */}
-        <div
+        <nav
+          ref={menuRef}
+          id="mobile-menu"
+          aria-label="Mobile Navigation"
+          aria-hidden={!menuOpen}
+          inert={!menuOpen}
           className={`sm:hidden overflow-hidden border-t border-border bg-background/95 transition-all duration-300 ease-out ${
             menuOpen
               ? "max-h-96 opacity-100 translate-y-0"
               : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
           }`}
         >
-          <div className="px-6 py-4 flex flex-col gap-1">
-            <a href="#top" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Home</a>
-            <a href="#occasionen" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Occasionen</a>
-            <a href="#warum" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Über uns</a>
-            <a href="#kontakt" onClick={closeMenu} className="py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Kontakt</a>
-            <a
-              href="tel:+41793006060"
-              onClick={closeMenu}
-              className="mt-3 text-sm font-medium bg-primary text-primary-foreground py-3 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <Phone className="size-3.5" />
-              Termin vereinbaren
-            </a>
-          </div>
-        </div>
+          <ul className="px-6 py-4 flex flex-col gap-1">
+            <li>
+              <a href="#top" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Home</a>
+            </li>
+            <li>
+              <a href="#occasionen" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Occasionen</a>
+            </li>
+            <li>
+              <a href="#warum" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Über uns</a>
+            </li>
+            <li>
+              <a href="#kontakt" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Kontakt</a>
+            </li>
+            <li>
+              <a
+                href="tel:+41793006060"
+                onClick={closeMenu}
+                className="mt-3 text-sm font-medium bg-primary text-primary-foreground py-3 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Phone className="size-3.5" aria-hidden="true" />
+                Termin vereinbaren
+              </a>
+            </li>
+          </ul>
+        </nav>
       </nav>
 
 
