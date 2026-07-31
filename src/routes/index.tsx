@@ -255,11 +255,10 @@ function Index() {
 
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {featured.map((v) => (
-            <a
+            <Link
               key={v.id}
-              href={v.detailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/occasionen/$vehicleId"
+              params={{ vehicleId: v.id }}
               className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all"
             >
               <div className="aspect-[4/3] overflow-hidden bg-background">
@@ -285,7 +284,7 @@ function Index() {
                   </span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

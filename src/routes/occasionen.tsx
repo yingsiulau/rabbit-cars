@@ -46,7 +46,7 @@ function OccasionenPage() {
           Unser aktueller <em className="not-italic text-muted-foreground">Bestand</em>.
         </h1>
         <p className="text-muted-foreground max-w-[52ch] mt-6">
-          Alle Fahrzeuge werden persönlich beraten und sorgfältig geprüft. Details zu jedem Fahrzeug öffnen sich auf AutoScout24 – wir übernehmen die Übergabe direkt in Gümligen.
+          Alle Fahrzeuge werden persönlich beraten und sorgfältig geprüft.
         </p>
       </header>
 
@@ -60,11 +60,10 @@ function OccasionenPage() {
       <section className="max-w-7xl mx-auto px-6 pb-24">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {vehicles.map((v) => (
-            <a
+            <Link
               key={v.id}
-              href={v.detailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/occasionen/$vehicleId"
+              params={{ vehicleId: v.id }}
               className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all"
             >
               <div className="aspect-[4/3] overflow-hidden bg-background">
@@ -106,7 +105,7 @@ function OccasionenPage() {
                   </span>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 

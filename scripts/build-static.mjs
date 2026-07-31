@@ -22,17 +22,9 @@ const outDir = join(process.cwd(), ".output/public");
 // links generated) under that same prefix.
 const basePath = process.env.VITE_BASE_PATH ?? "";
 
-const routes = [
-  { path: `${basePath}/`, outFile: "index.html" },
-  { path: `${basePath}/occasionen`, outFile: "occasionen/index.html" },
-  // Any unmatched path renders the root's notFoundComponent with a real 404
-  // status — GitHub Pages serves this file's contents for any unknown URL.
-  { path: `${basePath}/__404__`, outFile: "404.html" },
-];
-
 const { default: handler } = await import("../.output/server/index.mjs");
 
-for (const { path, outFile } of routes) {
+async function renderRoute(path) {
   const request = new Request(`${SITE_ORIGIN}${path}`);
   const response = await handler.fetch(request, {}, { waitUntil: () => {} });
   const html = await response.text();
@@ -41,11 +33,41 @@ for (const { path, outFile } of routes) {
     throw new Error(`Rendering ${path} failed with status ${response.status}:\n${html.slice(0, 500)}`);
   }
 
+  return { html, status: response.status };
+}
+
+async function writeRoute(outFile, html) {
   const outPath = join(outDir, outFile);
   await mkdir(dirname(outPath), { recursive: true });
   await writeFile(outPath, html, "utf8");
-  console.log(`wrote ${outFile} (status ${response.status}, ${html.length} bytes)`);
 }
+
+const { html: homeHtml, status: homeStatus } = await renderRoute(`${basePath}/`);
+await writeRoute("index.html", homeHtml);
+console.log(`wrote index.html (status ${homeStatus}, ${homeHtml.length} bytes)`);
+
+const { html: occasionenHtml, status: occasionenStatus } = await renderRoute(`${basePath}/occasionen`);
+await writeRoute("occasionen/index.html", occasionenHtml);
+console.log(`wrote occasionen/index.html (status ${occasionenStatus}, ${occasionenHtml.length} bytes)`);
+
+// Vehicle detail pages aren't a static list here — discover them from the
+// links the occasionen page itself just rendered, so this always matches
+// whatever's actually in data/vehicles.ts without duplicating that data.
+const vehicleIdPattern = new RegExp(`href="${basePath}/occasionen/([^"/]+)"`, "g");
+const vehicleIds = [...new Set([...occasionenHtml.matchAll(vehicleIdPattern)].map((m) => m[1]))];
+
+for (const id of vehicleIds) {
+  const { html, status } = await renderRoute(`${basePath}/occasionen/${id}`);
+  const outFile = `occasionen/${id}/index.html`;
+  await writeRoute(outFile, html);
+  console.log(`wrote ${outFile} (status ${status}, ${html.length} bytes)`);
+}
+
+// Any unmatched path renders the root's notFoundComponent with a real 404
+// status — GitHub Pages serves this file's contents for any unknown URL.
+const { html: notFoundHtml, status: notFoundStatus } = await renderRoute(`${basePath}/__404__`);
+await writeRoute("404.html", notFoundHtml);
+console.log(`wrote 404.html (status ${notFoundStatus}, ${notFoundHtml.length} bytes)`);
 
 // Prevents GitHub Pages' Jekyll processing from mangling the output.
 await writeFile(join(outDir, ".nojekyll"), "");

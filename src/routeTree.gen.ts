@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as OccasionenRouteImport } from './routes/occasionen'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OccasionenVehicleIdRouteImport } from './routes/occasionen_.$vehicleId'
 
 const OccasionenRoute = OccasionenRouteImport.update({
   id: '/occasionen',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OccasionenVehicleIdRoute = OccasionenVehicleIdRouteImport.update({
+  id: '/occasionen_/$vehicleId',
+  path: '/occasionen/$vehicleId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/occasionen': typeof OccasionenRoute
+  '/occasionen/$vehicleId': typeof OccasionenVehicleIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/occasionen': typeof OccasionenRoute
+  '/occasionen/$vehicleId': typeof OccasionenVehicleIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/occasionen': typeof OccasionenRoute
+  '/occasionen_/$vehicleId': typeof OccasionenVehicleIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/occasionen'
+  fullPaths: '/' | '/occasionen' | '/occasionen/$vehicleId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/occasionen'
-  id: '__root__' | '/' | '/occasionen'
+  to: '/' | '/occasionen' | '/occasionen/$vehicleId'
+  id: '__root__' | '/' | '/occasionen' | '/occasionen_/$vehicleId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   OccasionenRoute: typeof OccasionenRoute
+  OccasionenVehicleIdRoute: typeof OccasionenVehicleIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/occasionen_/$vehicleId': {
+      id: '/occasionen_/$vehicleId'
+      path: '/occasionen/$vehicleId'
+      fullPath: '/occasionen/$vehicleId'
+      preLoaderRoute: typeof OccasionenVehicleIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   OccasionenRoute: OccasionenRoute,
+  OccasionenVehicleIdRoute: OccasionenVehicleIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
