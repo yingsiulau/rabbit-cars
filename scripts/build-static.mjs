@@ -17,12 +17,17 @@ import { dirname, join } from "node:path";
 const SITE_ORIGIN = "https://rabbit-cars.ch";
 const outDir = join(process.cwd(), ".output/public");
 
+// Must match vite.config.ts's basePath — GitHub Pages project sites serve
+// from github.io/<repo>/, so rendered routes need to be requested (and their
+// links generated) under that same prefix.
+const basePath = process.env.VITE_BASE_PATH ?? "";
+
 const routes = [
-  { path: "/", outFile: "index.html" },
-  { path: "/occasionen", outFile: "occasionen/index.html" },
+  { path: `${basePath}/`, outFile: "index.html" },
+  { path: `${basePath}/occasionen`, outFile: "occasionen/index.html" },
   // Any unmatched path renders the root's notFoundComponent with a real 404
   // status — GitHub Pages serves this file's contents for any unknown URL.
-  { path: "/__404__", outFile: "404.html" },
+  { path: `${basePath}/__404__`, outFile: "404.html" },
 ];
 
 const { default: handler } = await import("../.output/server/index.mjs");
