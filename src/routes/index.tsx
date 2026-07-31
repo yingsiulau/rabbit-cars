@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake, Gauge, Fuel, Calendar, Menu, X } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
-import catAutos from "@/assets/hero-lambo.jpg.asset.json";
+import catAutos from "@/assets/hero-lambo.jpg";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
-import logoAsset from "@/assets/rabbit-cars-logo.png.asset.json";
+import logo from "@/assets/rabbit-cars-logo.png";
 import { vehicles } from "@/data/vehicles";
 
 export const Route = createFileRoute("/")({
@@ -70,7 +70,7 @@ function Index() {
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
           <a href="#top" className="block h-6 sm:h-7 shrink-0" onClick={closeMenu}>
             <img
-              src={logoAsset.url}
+              src={logo}
               alt="Rabbit-Cars"
               className="h-full w-auto brightness-0 invert"
               width={600}
@@ -209,7 +209,7 @@ function Index() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <a href="#occasionen" className="md:col-span-2 group relative h-96 overflow-hidden rounded-xl ring-1 ring-border">
-            <img src={catAutos.url} alt="Autos" loading="lazy" width={1200} height={900} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <img src={catAutos} alt="Autos" loading="lazy" width={1200} height={900} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8">
               <span className="text-xs uppercase tracking-widest text-muted-foreground mb-2">01 — Fahrzeuge</span>
@@ -383,7 +383,7 @@ function Index() {
       <footer className="py-12 border-t border-border">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <img
-            src={logoAsset.url}
+            src={logo}
             alt="Rabbit-Cars"
             className="h-6 w-auto brightness-0 invert opacity-80"
             width={600}
