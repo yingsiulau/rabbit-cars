@@ -1,0 +1,54 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # npm, not bun: this exact dependency tree needs a nested zod@4 under
+      # @tanstack/start-plugin-core (it requires zod ^4, the app's own zod ^3
+      # sits at the root) — bun's installer flattens it away and breaks the
+      # build, npm's classic nested node_modules resolves it correctly.
+      - run: npm ci
+
+      # Nitro's own static/github_pages preset is broken for this TanStack
+      # Start version (crawler 404s before rendering anything — see open
+      # upstream issues TanStack/router#7473, nitrojs/nitro#3905), so
+      # build:static drives the already-working SSR handler directly instead
+      # (see scripts/build-static.mjs) and writes real static HTML itself.
+      - run: npm run build:static
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./.output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
