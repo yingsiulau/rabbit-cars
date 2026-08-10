@@ -118,7 +118,7 @@ function OccasionenPage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pb-24">
+      <section id="motorraeder" className="max-w-7xl mx-auto px-6 pb-24 scroll-mt-16">
         <h2 className="font-display text-2xl font-medium mb-6">Motorräder · {motorcycles.length}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {motorcycles.map((v) => (

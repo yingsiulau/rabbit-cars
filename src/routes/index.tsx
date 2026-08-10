@@ -303,7 +303,7 @@ function Index() {
             <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {motorcycles.length} Motorräder</span>
             <h2 className="text-4xl font-display font-medium">Unsere Motorräder</h2>
           </div>
-          <Link to="/occasionen" className="text-sm text-accent underline underline-offset-4 inline-flex items-center gap-2">
+          <Link to="/occasionen" hash="motorraeder" className="text-sm text-accent underline underline-offset-4 inline-flex items-center gap-2">
             Alle ansehen <ArrowRight className="size-4" />
           </Link>
         </div>
