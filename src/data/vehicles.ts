@@ -1,4 +1,5 @@
-// Mock-Daten der aktuellen Rabbit-Cars Occasionen (Stand: Scrape von rabbit-cars.ch/occasionen).
+// Mock-Daten der aktuellen Rabbit-Cars Occasionen (Stand: Scrape von
+// autoscout24.ch/de/s/seller-63793, 09.08.2026).
 // Später wird dieses Modul durch einen echten Fetch ersetzt (AS24 Händler-Feed / Listing API).
 // Struktur bleibt gleich, damit der Umbau nur diese Datei betrifft.
 
@@ -37,18 +38,17 @@ export const vehicles: Vehicle[] = [
     detailUrl: `${BASE}/20619415`,
   },
   {
-    id: "20619288",
-    name: "Land Rover Defender 110 D240 SD4 HSE AT8",
-    highlights: "All Black · Garantie · Frisch ab MFK · Neue Reifen · CH-Fahrzeug",
-    price: "CHF 44'900.–",
-    firstRegistration: "10.2020",
-    fuel: "Diesel",
-    km: "95'000 km",
-    power: "241 PS (177 kW)",
-    transmission: "Automat",
-    consumption: "9.7 l/100 km",
-    image: IMG("288/20619288/159084918.jpeg"),
-    detailUrl: `${BASE}/20619288`,
+    id: "20676398",
+    name: "Mercedes-Benz AMG GT 4 53 4Matic+ Speedshift TCT Special Edition",
+    highlights: "Special Edition · Facelift · Sehr gepflegt · Frisch ab MFK · Garantie · Frisch ab Mercedes Service",
+    price: "CHF 74'900.–",
+    firstRegistration: "03.2022",
+    fuel: "Mild-Hybrid Benzin/Elektro",
+    km: "103'000 km",
+    power: "435 PS (320 kW)",
+    transmission: "Halbautomat",
+    image: "https://listing-images.autoscout24.ch/listing/398/20676398/466432289.jpeg?w=1920",
+    detailUrl: `${BASE}/20676398`,
   },
   {
     id: "20619260",

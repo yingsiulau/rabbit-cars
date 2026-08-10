@@ -265,7 +265,7 @@ function Index() {
                 <h3 className="text-xl font-display font-medium">Camper & Vans</h3>
               </div>
             </a>
-            <a href="#occasionen" className="group relative overflow-hidden rounded-xl ring-1 ring-border">
+            <a href="#motorraeder" className="group relative overflow-hidden rounded-xl ring-1 ring-border">
               <img src={catMoto} alt="Motorräder" loading="lazy" width={800} height={450} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
@@ -278,7 +278,7 @@ function Index() {
       </section>
 
       {/* Occasionen: Autos */}
-      <section id="occasionen" className="py-24 bg-panel/30 border-y border-border">
+      <section id="occasionen" className="py-24 bg-panel/30 border-y border-border scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap gap-6 justify-between items-end">
           <div className="max-w-[46ch]">
             <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {vehicles.length} Autos</span>
@@ -297,7 +297,7 @@ function Index() {
       </section>
 
       {/* Occasionen: Motorräder */}
-      <section className="py-24 border-b border-border">
+      <section id="motorraeder" className="py-24 border-b border-border scroll-mt-16">
         <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap gap-6 justify-between items-end">
           <div className="max-w-[46ch]">
             <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {motorcycles.length} Motorräder</span>

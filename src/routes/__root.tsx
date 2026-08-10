@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -119,6 +120,19 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const hash = useRouterState({ select: (s) => s.location.hash });
+
+  // scrollRestoration: true (router.tsx) restores the previous scroll
+  // position after mount, racing with — and winning over — the browser's
+  // native scroll-to-hash-on-load. Re-run it a tick later so #anchor links
+  // (e.g. the homepage's "Autos"/"Motorräder" sections) still land correctly.
+  useEffect(() => {
+    if (!hash) return;
+    const id = requestAnimationFrame(() => {
+      document.getElementById(hash.replace(/^#/, ""))?.scrollIntoView();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [hash]);
 
   return (
     <QueryClientProvider client={queryClient}>
