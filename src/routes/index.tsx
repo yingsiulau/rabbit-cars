@@ -161,6 +161,9 @@ function Index() {
               <a href="#occasionen" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Occasionen</a>
             </li>
             <li>
+              <a href="#motorraeder" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Motorräder</a>
+            </li>
+            <li>
               <a href="#warum" onClick={closeMenu} className="block py-3 text-sm font-medium hover:text-accent hover:translate-x-1 transition-all duration-200 border-b border-border/50 focus-visible:outline-none focus-visible:text-accent">Über uns</a>
             </li>
             <li>
@@ -257,14 +260,14 @@ function Index() {
           </a>
 
           <div className="grid grid-rows-2 gap-4">
-            <a href="#occasionen" className="group relative overflow-hidden rounded-xl ring-1 ring-border">
+            <Link to="/occasionen" hash="camper" className="group relative overflow-hidden rounded-xl ring-1 ring-border">
               <img src={catCamper} alt="Camper und Vans" loading="lazy" width={800} height={450} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
                 <span className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">02</span>
                 <h3 className="text-xl font-display font-medium">Camper & Vans</h3>
               </div>
-            </a>
+            </Link>
             <a href="#motorraeder" className="group relative overflow-hidden rounded-xl ring-1 ring-border">
               <img src={catMoto} alt="Motorräder" loading="lazy" width={800} height={450} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />

@@ -3,6 +3,17 @@
 // Später wird dieses Modul durch einen echten Fetch ersetzt (AS24 Händler-Feed / Listing API).
 // Struktur bleibt gleich, damit der Umbau nur diese Datei betrifft.
 
+export type VehicleCategory = "auto" | "camper" | "moto";
+
+// The anchor id each category's section on /occasionen (and the homepage,
+// for auto/moto) scrolls to. "auto" has none — it's the first section, so
+// the page top already lands there.
+export const CATEGORY_ANCHOR: Record<VehicleCategory, string | undefined> = {
+  auto: undefined,
+  camper: "camper",
+  moto: "motorraeder",
+};
+
 export type Vehicle = {
   id: string;
   name: string;
@@ -17,12 +28,13 @@ export type Vehicle = {
   range?: string;
   image: string;
   detailUrl: string;
+  category: VehicleCategory;
 };
 
 const BASE = "https://www.autoscout24.ch/de/hci/v2/2428/detail";
 const IMG = (path: string) => `https://images.autoscout24.ch/public/listing/${path}?w=1920`;
 
-export const vehicles: Vehicle[] = [
+const rawVehicles: Omit<Vehicle, "category">[] = [
   {
     id: "20619415",
     name: "Porsche Macan Turbo Performance PDK",
@@ -271,3 +283,5 @@ export const vehicles: Vehicle[] = [
     detailUrl: `${BASE}/12411976`,
   },
 ];
+
+export const vehicles: Vehicle[] = rawVehicles.map((v) => ({ ...v, category: "auto" }));

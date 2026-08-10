@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, Gauge, Fuel, Zap, Cog } from "lucide-react";
+import { ArrowLeft, ArrowRight, Gauge, Fuel, Zap, Cog, Phone } from "lucide-react";
 import logo from "@/assets/rabbit-cars-logo.png";
 import { vehicles, type Vehicle } from "@/data/vehicles";
+import { campers } from "@/data/campers";
 import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/occasionen")({
@@ -11,7 +12,7 @@ export const Route = createFileRoute("/occasionen")({
       { title: "Occasionen · Rabbit-Cars Gümligen" },
       {
         name: "description",
-        content: `Aktueller Occasionspark von Rabbit-Cars in Gümligen – ${vehicles.length} Autos und ${motorcycles.length} Motorräder: Porsche, BMW, Mercedes, Audi, Lamborghini, Ducati, Harley-Davidson und mehr.`,
+        content: `Aktueller Occasionspark von Rabbit-Cars in Gümligen – ${vehicles.length} Autos, ${campers.length} Camper und ${motorcycles.length} Motorräder: Porsche, BMW, Mercedes, Audi, Lamborghini, Ducati, Harley-Davidson und mehr.`,
       },
     ],
   }),
@@ -72,8 +73,8 @@ function OccasionenPage() {
     <div className="bg-background text-foreground min-h-screen">
       {/* Nav */}
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="block h-6 sm:h-7">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+          <Link to="/" className="block h-6 sm:h-7 shrink-0">
             <img
               src={logo}
               alt="Rabbit-Cars"
@@ -82,16 +83,28 @@ function OccasionenPage() {
               height={120}
             />
           </Link>
-          <Link to="/" className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2">
-            <ArrowLeft className="size-4" /> Zurück
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/" hash="kontakt" className="hidden sm:inline text-sm font-medium hover:text-accent transition-colors">
+              Kontakt
+            </Link>
+            <a
+              href="tel:+41793006060"
+              className="inline-flex text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 items-center gap-2"
+            >
+              <Phone className="size-3.5" aria-hidden="true" />
+              <span className="hidden sm:inline">Termin</span>
+            </a>
+            <Link to="/" className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2">
+              <ArrowLeft className="size-4" /> <span className="hidden sm:inline">Zurück</span>
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* Header */}
-      <header className="pt-32 pb-12 max-w-7xl mx-auto px-6">
+      <header className="pt-32 pb-8 max-w-7xl mx-auto px-6">
         <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">
-          Occasionspark · {vehicles.length} Autos · {motorcycles.length} Motorräder
+          Occasionspark · {vehicles.length} Autos · {campers.length} Camper · {motorcycles.length} Motorräder
         </span>
         <h1 className="font-display text-5xl sm:text-6xl font-medium leading-[1.05]">
           Unser aktueller <em className="not-italic text-muted-foreground">Bestand</em>.
@@ -101,15 +114,24 @@ function OccasionenPage() {
         </p>
       </header>
 
+      {/* Quick-Nav zwischen den Kategorien */}
+      <div className="sticky top-16 z-40 bg-background/90 backdrop-blur-xl border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 flex gap-6 text-sm font-medium overflow-x-auto">
+          <a href="#autos" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Autos · {vehicles.length}</a>
+          <a href="#camper" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Camper & Vans · {campers.length}</a>
+          <a href="#motorraeder" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Motorräder · {motorcycles.length}</a>
+        </div>
+      </div>
+
       {/*
-        Stopgap: static cards from data/vehicles.ts + data/motorcycles.ts
-        (checked 2026-07-31 against the live AS24/MotoScout24 seller pages —
-        still matches). The live AS24 HCI widget (see
-        components/AutoScout24Listings.tsx) is domain-locked to
+        Stopgap: static cards from data/vehicles.ts + data/campers.ts +
+        data/motorcycles.ts (checked 09.08.2026 against the live
+        AS24/MotoScout24 seller pages — still matches). The live AS24 HCI
+        widget (see components/AutoScout24Listings.tsx) is domain-locked to
         rabbit-cars.ch and stays blank on the github.io preview — swap back
         to that once the rabbit-cars.ch DNS cutover to GitHub Pages is live.
       */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
+      <section id="autos" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-32">
         <h2 className="font-display text-2xl font-medium mb-6">Autos · {vehicles.length}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {vehicles.map((v) => (
@@ -118,7 +140,16 @@ function OccasionenPage() {
         </div>
       </section>
 
-      <section id="motorraeder" className="max-w-7xl mx-auto px-6 pb-24 scroll-mt-16">
+      <section id="camper" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-32">
+        <h2 className="font-display text-2xl font-medium mb-6">Camper & Vans · {campers.length}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {campers.map((v) => (
+            <VehicleCard key={v.id} v={v} />
+          ))}
+        </div>
+      </section>
+
+      <section id="motorraeder" className="max-w-7xl mx-auto px-6 py-16 pb-24 scroll-mt-32">
         <h2 className="font-display text-2xl font-medium mb-6">Motorräder · {motorcycles.length}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {motorcycles.map((v) => (

@@ -1,13 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Gauge, Fuel, Zap, Cog, Calendar, ExternalLink, Phone } from "lucide-react";
 import logo from "@/assets/rabbit-cars-logo.png";
-import { vehicles } from "@/data/vehicles";
+import { vehicles, CATEGORY_ANCHOR } from "@/data/vehicles";
+import { campers } from "@/data/campers";
 import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/occasionen_/$vehicleId")({
   component: VehicleDetailPage,
   loader: ({ params }) => {
-    const vehicle = [...vehicles, ...motorcycles].find((v) => v.id === params.vehicleId);
+    const vehicle = [...vehicles, ...campers, ...motorcycles].find((v) => v.id === params.vehicleId);
     if (!vehicle) throw notFound();
     return vehicle;
   },
@@ -27,8 +28,8 @@ function VehicleDetailPage() {
   return (
     <div className="bg-background text-foreground min-h-screen">
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link to="/" className="block h-6 sm:h-7">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+          <Link to="/" className="block h-6 sm:h-7 shrink-0">
             <img
               src={logo}
               alt="Rabbit-Cars"
@@ -37,9 +38,18 @@ function VehicleDetailPage() {
               height={120}
             />
           </Link>
-          <Link to="/occasionen" className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2">
-            <ArrowLeft className="size-4" /> Zurück zur Übersicht
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link to="/" hash="kontakt" className="hidden sm:inline text-sm font-medium hover:text-accent transition-colors">
+              Kontakt
+            </Link>
+            <Link
+              to="/occasionen"
+              hash={CATEGORY_ANCHOR[vehicle.category]}
+              className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2"
+            >
+              <ArrowLeft className="size-4" /> Zurück zur Übersicht
+            </Link>
+          </div>
         </div>
       </nav>
 

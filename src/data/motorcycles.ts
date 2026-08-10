@@ -7,7 +7,7 @@ import type { Vehicle } from "./vehicles";
 const BASE = "https://www.motoscout24.ch/de/d";
 const IMG = (path: string) => `https://listing-images.motoscout24.ch/listing/${path}?w=1920`;
 
-export const motorcycles: Vehicle[] = [
+const rawMotorcycles: Omit<Vehicle, "category">[] = [
   {
     id: "20520463",
     name: "BMW M 1000 R Competition Full Carbon",
@@ -87,3 +87,5 @@ export const motorcycles: Vehicle[] = [
     detailUrl: `${BASE}/harley-davidson-flstfbs-fat-boy-cvo-custom-12265647`,
   },
 ];
+
+export const motorcycles: Vehicle[] = rawMotorcycles.map((v) => ({ ...v, category: "moto" }));
