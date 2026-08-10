@@ -6,7 +6,8 @@ import catAutos from "@/assets/hero-lambo.jpg";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
 import logo from "@/assets/rabbit-cars-logo.png";
-import { vehicles } from "@/data/vehicles";
+import { vehicles, type Vehicle } from "@/data/vehicles";
+import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -14,7 +15,42 @@ export const Route = createFileRoute("/")({
 
 const brands = ["PORSCHE", "AUDI", "BMW", "MERCEDES-BENZ", "VW", "FERRARI", "LAND ROVER", "TESLA"];
 
-const featured = vehicles.slice(0, 6);
+const featuredCars = vehicles.slice(0, 6);
+const featuredMoto = motorcycles.slice(0, 6);
+
+function VehicleTeaserCard({ v }: { v: Vehicle }) {
+  return (
+    <Link
+      to="/occasionen/$vehicleId"
+      params={{ vehicleId: v.id }}
+      className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all"
+    >
+      <div className="aspect-[4/3] overflow-hidden bg-background">
+        <img src={v.image} alt={v.name} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+      </div>
+      <div className="p-6 space-y-4 flex-1 flex flex-col">
+        <div>
+          <div className="flex justify-between items-start gap-4">
+            <h4 className="font-display font-medium text-lg leading-tight">{v.name}</h4>
+            <span className="text-muted-foreground text-xs whitespace-nowrap pt-1">{v.firstRegistration}</span>
+          </div>
+          <p className="text-muted-foreground text-xs mt-2 line-clamp-2">{v.highlights}</p>
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-[10px] text-muted-foreground tracking-wider">
+          <span className="inline-flex items-center gap-1"><Gauge className="size-3" />{v.km}</span>
+          <span className="inline-flex items-center gap-1"><Fuel className="size-3" />{v.fuel}</span>
+          <span className="inline-flex items-center gap-1"><Calendar className="size-3" />{v.power.split(" ")[0]} PS</span>
+        </div>
+        <div className="pt-4 mt-auto flex justify-between items-center border-t border-border">
+          <span className="text-lg font-display">{v.price}</span>
+          <span className="text-xs text-accent uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+            Details <ArrowRight className="size-3" />
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -241,50 +277,40 @@ function Index() {
         </div>
       </section>
 
-      {/* Occasionen */}
+      {/* Occasionen: Autos */}
       <section id="occasionen" className="py-24 bg-panel/30 border-y border-border">
         <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap gap-6 justify-between items-end">
           <div className="max-w-[46ch]">
-            <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {vehicles.length} Fahrzeuge</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {vehicles.length} Autos</span>
             <h2 className="text-4xl font-display font-medium">Ausgewählte Occasionen</h2>
           </div>
           <Link to="/occasionen" className="text-sm text-accent underline underline-offset-4 inline-flex items-center gap-2">
-            Alle {vehicles.length} ansehen <ArrowRight className="size-4" />
+            Alle ansehen <ArrowRight className="size-4" />
           </Link>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featured.map((v) => (
-            <Link
-              key={v.id}
-              to="/occasionen/$vehicleId"
-              params={{ vehicleId: v.id }}
-              className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all"
-            >
-              <div className="aspect-[4/3] overflow-hidden bg-background">
-                <img src={v.image} alt={v.name} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="p-6 space-y-4 flex-1 flex flex-col">
-                <div>
-                  <div className="flex justify-between items-start gap-4">
-                    <h4 className="font-display font-medium text-lg leading-tight">{v.name}</h4>
-                    <span className="text-muted-foreground text-xs whitespace-nowrap pt-1">{v.firstRegistration}</span>
-                  </div>
-                  <p className="text-muted-foreground text-xs mt-2 line-clamp-2">{v.highlights}</p>
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-[10px] text-muted-foreground tracking-wider">
-                  <span className="inline-flex items-center gap-1"><Gauge className="size-3" />{v.km}</span>
-                  <span className="inline-flex items-center gap-1"><Fuel className="size-3" />{v.fuel}</span>
-                  <span className="inline-flex items-center gap-1"><Calendar className="size-3" />{v.power.split(" ")[0]} PS</span>
-                </div>
-                <div className="pt-4 mt-auto flex justify-between items-center border-t border-border">
-                  <span className="text-lg font-display">{v.price}</span>
-                  <span className="text-xs text-accent uppercase tracking-widest inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Details <ArrowRight className="size-3" />
-                  </span>
-                </div>
-              </div>
-            </Link>
+          {featuredCars.map((v) => (
+            <VehicleTeaserCard key={v.id} v={v} />
+          ))}
+        </div>
+      </section>
+
+      {/* Occasionen: Motorräder */}
+      <section className="py-24 border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-wrap gap-6 justify-between items-end">
+          <div className="max-w-[46ch]">
+            <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">Aktueller Bestand · {motorcycles.length} Motorräder</span>
+            <h2 className="text-4xl font-display font-medium">Unsere Motorräder</h2>
+          </div>
+          <Link to="/occasionen" className="text-sm text-accent underline underline-offset-4 inline-flex items-center gap-2">
+            Alle ansehen <ArrowRight className="size-4" />
+          </Link>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredMoto.map((v) => (
+            <VehicleTeaserCard key={v.id} v={v} />
           ))}
         </div>
       </section>

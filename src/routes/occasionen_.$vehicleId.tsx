@@ -2,11 +2,12 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Gauge, Fuel, Zap, Cog, Calendar, ExternalLink, Phone } from "lucide-react";
 import logo from "@/assets/rabbit-cars-logo.png";
 import { vehicles } from "@/data/vehicles";
+import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/occasionen_/$vehicleId")({
   component: VehicleDetailPage,
   loader: ({ params }) => {
-    const vehicle = vehicles.find((v) => v.id === params.vehicleId);
+    const vehicle = [...vehicles, ...motorcycles].find((v) => v.id === params.vehicleId);
     if (!vehicle) throw notFound();
     return vehicle;
   },
