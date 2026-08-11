@@ -7,13 +7,25 @@ import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
 import logo from "@/assets/rabbit-cars-logo.png";
 import { vehicles, type Vehicle } from "@/data/vehicles";
+import { campers } from "@/data/campers";
 import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const brands = ["PORSCHE", "AUDI", "BMW", "MERCEDES-BENZ", "VW", "FERRARI", "LAND ROVER", "TESLA"];
+// Marken früherer, inzwischen verkaufter Fahrzeuge — bleiben hier bewusst
+// stehen, damit sie im Marken-Band nicht verschwinden, sobald das letzte
+// Fahrzeug dieser Marke aus data/*.ts entfernt wird (z.B. Land Rover nach
+// dem Verkauf des Defender).
+const PAST_BRANDS = ["LAND ROVER", "FERRARI", "TESLA"];
+
+const brands = Array.from(
+  new Set([
+    ...[...vehicles, ...campers, ...motorcycles].map((v) => v.name.split(" ")[0].toUpperCase()),
+    ...PAST_BRANDS,
+  ])
+);
 
 const featuredCars = vehicles.slice(0, 6);
 const featuredMoto = motorcycles.slice(0, 6);
@@ -231,10 +243,16 @@ function Index() {
       {/* Brand marquee */}
       <div className="py-10 border-y border-border overflow-hidden bg-panel/40">
         <div className="flex animate-marquee gap-16 whitespace-nowrap px-8 w-max">
-          {[...brands, ...brands].map((b, i) => (
-            <span key={i} className="text-2xl font-display font-medium text-muted-foreground/40 tracking-tight">
-              {b}
-            </span>
+          {[0, 1].map((copy) => (
+            // Second copy is the seamless-loop illusion, not new content —
+            // hidden from assistive tech so brand names aren't announced twice.
+            <div key={copy} aria-hidden={copy === 1 || undefined} className="flex gap-16">
+              {brands.map((b) => (
+                <span key={b} className="text-2xl font-display font-medium text-muted-foreground/40 tracking-tight">
+                  {b}
+                </span>
+              ))}
+            </div>
           ))}
         </div>
       </div>

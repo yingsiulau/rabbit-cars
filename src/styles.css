@@ -79,7 +79,9 @@
 }
 
 @utility animate-marquee {
-  animation: marquee 40s linear infinite;
+  /* Duration scales with the brand list length so more brands (index.tsx)
+     don't just speed the loop up — keeps a steady, unhurried pace. */
+  animation: marquee 60s linear infinite;
 }
 
 @keyframes fade-up {
