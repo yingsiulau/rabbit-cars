@@ -95,6 +95,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        // SVG favicon first: it carries its own prefers-color-scheme
+        // media query (white rabbit in dark mode) — browsers that support
+        // SVG icons pick this over the .ico fallback below.
+        rel: "icon",
+        href: "/favicon.svg",
+        type: "image/svg+xml",
+      },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
