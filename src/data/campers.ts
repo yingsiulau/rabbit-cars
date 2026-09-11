@@ -12,6 +12,13 @@ const rawCampers: Omit<Vehicle, "category">[] = [
     id: "20658231",
     name: "Fiat Affinity Camper Van",
     highlights: "Truma Heizung · Elekt. Hebebett für mehr Platz im Kofferraum · L-förmige Küche · LED Scheinwerfer · Navi",
+    description: `Wunderschöner Fiat Affinity Camper Van
+Luxuriöser Camper mit Top Qualität
+Sehr Seltenes Modell, Toll Verarbeitet
+Automatik Getriebe
+180PS
+Spezial Navigationssystem
+Top Ausgestattet ...`,
     price: "CHF 79'900.–",
     firstRegistration: "04.2024",
     fuel: "Diesel",
@@ -19,6 +26,15 @@ const rawCampers: Omit<Vehicle, "category">[] = [
     power: "180 PS (132 kW)",
     transmission: "Automat",
     image: IMG("231/20658231/2146155080.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/231/20658231/814420353.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/231/20658231/1934335994.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/231/20658231/720264027.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/231/20658231/963714444.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/231/20658231/1107071359.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/231/20658231/1249872533.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/231/20658231/1536337422.jpeg?w=1920",
+    ],
     detailUrl: `${BASE}/20658231`,
   },
 ];

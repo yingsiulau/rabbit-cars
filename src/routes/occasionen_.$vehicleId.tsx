@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useState } from "react";
 import { ArrowLeft, Gauge, Fuel, Zap, Cog, Calendar, ExternalLink, Phone } from "lucide-react";
 import logo from "@/assets/rabbit-cars-logo.png";
 import { vehicles, CATEGORY_ANCHOR } from "@/data/vehicles";
@@ -24,6 +25,8 @@ export const Route = createFileRoute("/occasionen_/$vehicleId")({
 
 function VehicleDetailPage() {
   const vehicle = Route.useLoaderData();
+  const gallery = [vehicle.image, ...(vehicle.images ?? [])];
+  const [activeImage, setActiveImage] = useState(vehicle.image);
 
   return (
     <div className="bg-background text-foreground min-h-screen">
@@ -55,14 +58,32 @@ function VehicleDetailPage() {
 
       <section className="pt-32 pb-24 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-border bg-panel">
-            <img
-              src={vehicle.image}
-              alt={vehicle.name}
-              width={1200}
-              height={900}
-              className="w-full h-full object-cover"
-            />
+          <div>
+            <div className="aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-border bg-panel">
+              <img
+                src={activeImage}
+                alt={vehicle.name}
+                width={1200}
+                height={900}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {gallery.length > 1 && (
+              <div className="mt-3 grid grid-cols-5 gap-2">
+                {gallery.map((src, i) => (
+                  <button
+                    key={src + i}
+                    type="button"
+                    onClick={() => setActiveImage(src)}
+                    className={`aspect-square overflow-hidden rounded-md ring-1 transition-all ${
+                      activeImage === src ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
+                    }`}
+                  >
+                    <img src={src} alt="" width={200} height={200} className="w-full h-full object-cover" loading="lazy" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="space-y-6">
@@ -119,6 +140,13 @@ function VehicleDetailPage() {
             </div>
           </div>
         </div>
+
+        {vehicle.description && (
+          <div className="mt-16 max-w-3xl">
+            <h2 className="font-display text-2xl font-medium mb-4">Fahrzeugbeschreibung</h2>
+            <p className="text-muted-foreground whitespace-pre-line leading-relaxed">{vehicle.description}</p>
+          </div>
+        )}
       </section>
     </div>
   );
