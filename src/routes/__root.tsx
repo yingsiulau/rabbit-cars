@@ -96,11 +96,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       {
-        // SVG favicon first: it carries its own prefers-color-scheme
-        // media query (white rabbit in dark mode) — browsers that support
-        // SVG icons pick this over the .ico fallback below.
+        // Browser picks whichever matches its actual color-scheme media
+        // query at render time — more reliably supported for tab favicons
+        // than a media query embedded inside the SVG itself, which some
+        // browsers evaluate inconsistently for icon rendering.
         rel: "icon",
-        href: "/favicon.svg",
+        href: "/favicon-light.svg",
+        media: "(prefers-color-scheme: light)",
+        type: "image/svg+xml",
+      },
+      {
+        rel: "icon",
+        href: "/favicon-dark.svg",
+        media: "(prefers-color-scheme: dark)",
         type: "image/svg+xml",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
