@@ -6,11 +6,12 @@
 export type VehicleCategory = "auto" | "camper" | "moto";
 
 // The anchor id each category's section on /occasionen (and the homepage,
-// for auto/moto) scrolls to. "auto" has none — it's the first section, so
-// the page top already lands there.
+// for auto/moto) scrolls to. Autos & Camper both live in the "fahrzeuge"
+// section (the AS24 HCI widget covers both) — "auto" has none since it's
+// also the first section, so the page top already lands there.
 export const CATEGORY_ANCHOR: Record<VehicleCategory, string | undefined> = {
   auto: undefined,
-  camper: "camper",
+  camper: "fahrzeuge",
   moto: "motorraeder",
 };
 

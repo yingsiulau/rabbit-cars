@@ -51,10 +51,17 @@ await writeRoute("occasionen/index.html", occasionenHtml);
 console.log(`wrote occasionen/index.html (status ${occasionenStatus}, ${occasionenHtml.length} bytes)`);
 
 // Vehicle detail pages aren't a static list here — discover them from the
-// links the occasionen page itself just rendered, so this always matches
-// whatever's actually in data/vehicles.ts without duplicating that data.
+// links the occasionen page and homepage just rendered, so this always
+// matches whatever's actually linked without duplicating that data. Scanning
+// both matters since the AS24 widget renders autos/campers client-side (no
+// links in the static HTML), while the homepage's teaser cards still link
+// to these pages directly.
 const vehicleIdPattern = new RegExp(`href="${basePath}/occasionen/([^"/]+)"`, "g");
-const vehicleIds = [...new Set([...occasionenHtml.matchAll(vehicleIdPattern)].map((m) => m[1]))];
+const vehicleIds = [
+  ...new Set(
+    [...occasionenHtml.matchAll(vehicleIdPattern), ...homeHtml.matchAll(vehicleIdPattern)].map((m) => m[1]),
+  ),
+];
 
 for (const id of vehicleIds) {
   const { html, status } = await renderRoute(`${basePath}/occasionen/${id}`);

@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Gauge, Fuel, Zap, Cog, Phone } from "lucide-react";
 import logo from "@/assets/rabbit-cars-logo.png";
-import { vehicles, type Vehicle } from "@/data/vehicles";
-import { campers } from "@/data/campers";
+import { type Vehicle } from "@/data/vehicles";
 import { motorcycles } from "@/data/motorcycles";
+import { AutoScout24Listings } from "@/components/AutoScout24Listings";
 
 export const Route = createFileRoute("/occasionen")({
   component: OccasionenPage,
@@ -12,7 +12,7 @@ export const Route = createFileRoute("/occasionen")({
       { title: "Occasionen · Rabbit-Cars Gümligen" },
       {
         name: "description",
-        content: `Aktueller Occasionspark von Rabbit-Cars in Gümligen – ${vehicles.length} Autos, ${campers.length} Camper und ${motorcycles.length} Motorräder: Porsche, BMW, Mercedes, Audi, Lamborghini, Ducati, Harley-Davidson und mehr.`,
+        content: `Aktueller Occasionspark von Rabbit-Cars in Gümligen – Autos, Camper und ${motorcycles.length} Motorräder: Porsche, BMW, Mercedes, Audi, Lamborghini, Ducati, Harley-Davidson und mehr.`,
       },
     ],
   }),
@@ -104,7 +104,7 @@ function OccasionenPage() {
       {/* Header */}
       <header className="pt-32 pb-8 max-w-7xl mx-auto px-6">
         <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">
-          Occasionspark · {vehicles.length} Autos · {campers.length} Camper · {motorcycles.length} Motorräder
+          Occasionspark · Autos & Camper live von AutoScout24 · {motorcycles.length} Motorräder
         </span>
         <h1 className="font-display text-5xl sm:text-6xl font-medium leading-[1.05]">
           Unser aktueller <em className="not-italic text-muted-foreground">Bestand</em>.
@@ -117,38 +117,24 @@ function OccasionenPage() {
       {/* Quick-Nav zwischen den Kategorien */}
       <div className="sticky top-16 z-40 bg-background/90 backdrop-blur-xl border-y border-border">
         <div className="max-w-7xl mx-auto px-6 flex gap-6 text-sm font-medium overflow-x-auto">
-          <a href="#autos" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Autos · {vehicles.length}</a>
-          <a href="#camper" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Camper & Vans · {campers.length}</a>
+          <a href="#fahrzeuge" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Autos & Camper</a>
           <a href="#motorraeder" className="py-4 whitespace-nowrap hover:text-accent transition-colors">Motorräder · {motorcycles.length}</a>
         </div>
       </div>
 
+      {/* Live AS24 HCI-Widget: zeigt Autos & Camper direkt von AutoScout24 (Konto 2428) */}
+      <section id="fahrzeuge" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-32">
+        <h2 className="font-display text-2xl font-medium mb-6">Autos & Camper</h2>
+        <div className="rounded-xl bg-white p-4 sm:p-6 ring-1 ring-border">
+          <AutoScout24Listings configId="2428" />
+        </div>
+      </section>
+
       {/*
-        Stopgap: static cards from data/vehicles.ts + data/campers.ts +
-        data/motorcycles.ts (checked 09.08.2026 against the live
-        AS24/MotoScout24 seller pages — still matches). The live AS24 HCI
-        widget (see components/AutoScout24Listings.tsx) is domain-locked to
-        rabbit-cars.ch and stays blank on the github.io preview — swap back
-        to that once the rabbit-cars.ch DNS cutover to GitHub Pages is live.
+        Motorräder sind bei MotoScout24 (separate Plattform/Konto) gelistet,
+        nicht im AS24-HCI-Widget oben enthalten — bleiben deshalb als
+        statische Karten (Stand: Scrape von motoscout24.ch, checked 09.08.2026).
       */}
-      <section id="autos" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-32">
-        <h2 className="font-display text-2xl font-medium mb-6">Autos · {vehicles.length}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {vehicles.map((v) => (
-            <VehicleCard key={v.id} v={v} />
-          ))}
-        </div>
-      </section>
-
-      <section id="camper" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-32">
-        <h2 className="font-display text-2xl font-medium mb-6">Camper & Vans · {campers.length}</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {campers.map((v) => (
-            <VehicleCard key={v.id} v={v} />
-          ))}
-        </div>
-      </section>
-
       <section id="motorraeder" className="max-w-7xl mx-auto px-6 py-16 pb-24 scroll-mt-32">
         <h2 className="font-display text-2xl font-medium mb-6">Motorräder · {motorcycles.length}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
