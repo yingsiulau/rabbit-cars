@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as OccasionenRouteImport } from './routes/occasionen'
+import { Route as As24RouteImport } from './routes/as24'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as OccasionenVehicleIdRouteImport } from './routes/occasionen_.$vehicleId'
 
 const OccasionenRoute = OccasionenRouteImport.update({
   id: '/occasionen',
   path: '/occasionen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const As24Route = As24RouteImport.update({
+  id: '/as24',
+  path: '/as24',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,30 +37,34 @@ const OccasionenVehicleIdRoute = OccasionenVehicleIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/as24': typeof As24Route
   '/occasionen': typeof OccasionenRoute
   '/occasionen/$vehicleId': typeof OccasionenVehicleIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/as24': typeof As24Route
   '/occasionen': typeof OccasionenRoute
   '/occasionen/$vehicleId': typeof OccasionenVehicleIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/as24': typeof As24Route
   '/occasionen': typeof OccasionenRoute
   '/occasionen_/$vehicleId': typeof OccasionenVehicleIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/occasionen' | '/occasionen/$vehicleId'
+  fullPaths: '/' | '/as24' | '/occasionen' | '/occasionen/$vehicleId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/occasionen' | '/occasionen/$vehicleId'
-  id: '__root__' | '/' | '/occasionen' | '/occasionen_/$vehicleId'
+  to: '/' | '/as24' | '/occasionen' | '/occasionen/$vehicleId'
+  id: '__root__' | '/' | '/as24' | '/occasionen' | '/occasionen_/$vehicleId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  As24Route: typeof As24Route
   OccasionenRoute: typeof OccasionenRoute
   OccasionenVehicleIdRoute: typeof OccasionenVehicleIdRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/occasionen'
       fullPath: '/occasionen'
       preLoaderRoute: typeof OccasionenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/as24': {
+      id: '/as24'
+      path: '/as24'
+      fullPath: '/as24'
+      preLoaderRoute: typeof As24RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  As24Route: As24Route,
   OccasionenRoute: OccasionenRoute,
   OccasionenVehicleIdRoute: OccasionenVehicleIdRoute,
 }

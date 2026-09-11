@@ -50,6 +50,16 @@ const { html: occasionenHtml, status: occasionenStatus } = await renderRoute(`${
 await writeRoute("occasionen/index.html", occasionenHtml);
 console.log(`wrote occasionen/index.html (status ${occasionenStatus}, ${occasionenHtml.length} bytes)`);
 
+// /as24: internal-only utility page (not linked anywhere, noindex) that
+// renders the bare AS24 HCI widget so its live data can be read off it
+// directly when refreshing data/vehicles.ts + data/campers.ts — reading
+// what our own domain legitimately displays via AS24's own official embed,
+// rather than fetching autoscout24.ch itself. Never auto-discovered since
+// nothing links to it, so it's rendered explicitly here.
+const { html: as24Html, status: as24Status } = await renderRoute(`${basePath}/as24`);
+await writeRoute("as24/index.html", as24Html);
+console.log(`wrote as24/index.html (status ${as24Status}, ${as24Html.length} bytes)`);
+
 // Vehicle detail pages aren't a static list here — discover them from the
 // links the occasionen page and homepage just rendered, so this always
 // matches whatever's actually linked without duplicating that data. Scanning
