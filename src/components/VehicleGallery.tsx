@@ -6,10 +6,16 @@ type Props = {
   alt: string;
 };
 
+const GRID_SIZE = 5;
+
 export function VehicleGallery({ images, alt }: Props) {
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const hasMultiple = images.length > 1;
+
+  const gridThumbs = images.slice(1, 1 + GRID_SIZE);
+  const remaining = images.length - 1 - GRID_SIZE;
+  const gridRows = gridThumbs.length > 0 ? 1 + Math.ceil(Math.max(gridThumbs.length - 1, 0) / 2) : 0;
 
   const prev = useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
   const next = useCallback(() => setIndex((i) => (i + 1) % images.length), [images.length]);
@@ -33,8 +39,8 @@ export function VehicleGallery({ images, alt }: Props) {
 
   return (
     <div>
-      <div className="flex flex-col lg:flex-row gap-3 lg:items-stretch">
-        <div className="relative flex-1 aspect-[16/10] overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
+      <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1fr] gap-3 lg:items-stretch">
+        <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
           <img
             src={images[index]}
             alt={alt}
@@ -79,20 +85,51 @@ export function VehicleGallery({ images, alt }: Props) {
         </div>
 
         {hasMultiple && (
-          <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pb-1 lg:pb-0 lg:w-24 lg:shrink-0">
-            {images.map((src, i) => (
-              <button
-                key={src + i}
-                type="button"
-                onClick={() => setIndex(i)}
-                className={`shrink-0 w-20 lg:w-full aspect-square overflow-hidden rounded-md ring-1 transition-all ${
-                  i === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
-                }`}
-              >
-                <img src={src} alt="" width={160} height={160} className="w-full h-full object-cover" loading="lazy" />
-              </button>
-            ))}
-          </div>
+          <>
+            {/* Mobile: horizontal scroll strip */}
+            <div className="flex lg:hidden gap-2 overflow-x-auto pb-1">
+              {images.map((src, i) => (
+                <button
+                  key={src + i}
+                  type="button"
+                  onClick={() => setIndex(i)}
+                  className={`shrink-0 w-20 aspect-square overflow-hidden rounded-md ring-1 transition-all ${
+                    i === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
+                  }`}
+                >
+                  <img src={src} alt="" width={160} height={160} className="w-full h-full object-cover" loading="lazy" />
+                </button>
+              ))}
+            </div>
+
+            {/* Desktop: thumbnail grid to the right of the main image */}
+            <div
+              className="hidden lg:grid grid-cols-2 gap-2 h-full"
+              style={{ gridTemplateRows: `repeat(${gridRows}, minmax(0, 1fr))` }}
+            >
+              {gridThumbs.map((src, i) => {
+                const realIndex = i + 1;
+                const isLastCell = i === gridThumbs.length - 1;
+                return (
+                  <button
+                    key={src + i}
+                    type="button"
+                    onClick={() => (isLastCell && remaining > 0 ? setLightboxOpen(true) : setIndex(realIndex))}
+                    className={`relative overflow-hidden rounded-md ring-1 transition-all ${i === 0 ? "col-span-2" : ""} ${
+                      realIndex === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
+                    }`}
+                  >
+                    <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                    {isLastCell && remaining > 0 && (
+                      <div className="absolute inset-0 bg-background/70 backdrop-blur-sm flex items-center justify-center text-sm font-medium">
+                        +{remaining} Bilder
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </>
         )}
       </div>
 
