@@ -102,7 +102,7 @@ export function VehicleGallery({ images, alt }: Props) {
             </div>
 
             {/* Desktop: thumbnail grid to the right of the main image */}
-            <div className="hidden lg:grid grid-cols-2 gap-2">
+            <div className="hidden lg:grid grid-cols-2 gap-x-2 gap-y-1">
               {gridThumbs.map((src, i) => {
                 const realIndex = i + 1;
                 const isLastCell = i === gridThumbs.length - 1;
