@@ -96,19 +96,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       {
-        // Browser picks whichever matches its actual color-scheme media
-        // query at render time — more reliably supported for tab favicons
-        // than a media query embedded inside the SVG itself, which some
-        // browsers evaluate inconsistently for icon rendering.
+        // White circle badge behind the rabbit mark, so the icon has its
+        // own contrast and reads the same in light and dark browser chrome
+        // — no more need to swap between separate light/dark SVGs.
         rel: "icon",
-        href: "/favicon-light.svg",
-        media: "(prefers-color-scheme: light)",
-        type: "image/svg+xml",
-      },
-      {
-        rel: "icon",
-        href: "/favicon-dark.svg",
-        media: "(prefers-color-scheme: dark)",
+        href: "/favicon.svg",
         type: "image/svg+xml",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
