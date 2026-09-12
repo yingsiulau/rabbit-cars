@@ -6,7 +6,6 @@ import catAutos from "@/assets/hero-lambo.jpg";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
 import logo from "@/assets/rabbit-cars-logo.png";
-import { resizeUrl } from "@/lib/image-url";
 import { vehicles, type Vehicle } from "@/data/vehicles";
 import { campers } from "@/data/campers";
 import { motorcycles } from "@/data/motorcycles";
@@ -39,7 +38,7 @@ function VehicleTeaserCard({ v }: { v: Vehicle }) {
       className="group bg-panel ring-1 ring-border rounded-lg overflow-hidden flex flex-col hover:ring-accent/40 transition-all"
     >
       <div className="aspect-[4/3] overflow-hidden bg-background">
-        <img src={resizeUrl(v.image, 800)} alt={v.name} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+        <img src={v.image} alt={v.name} loading="lazy" width={1200} height={900} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
       </div>
       <div className="p-6 space-y-4 flex-1 flex flex-col">
         <div>
