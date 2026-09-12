@@ -15,7 +15,6 @@ export function VehicleGallery({ images, alt }: Props) {
 
   const gridThumbs = images.slice(1, 1 + GRID_SIZE);
   const remaining = images.length - 1 - GRID_SIZE;
-  const gridRows = gridThumbs.length > 0 ? 1 + Math.ceil(Math.max(gridThumbs.length - 1, 0) / 2) : 0;
 
   const prev = useCallback(() => setIndex((i) => (i - 1 + images.length) % images.length), [images.length]);
   const next = useCallback(() => setIndex((i) => (i + 1) % images.length), [images.length]);
@@ -39,7 +38,7 @@ export function VehicleGallery({ images, alt }: Props) {
 
   return (
     <div>
-      <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1fr] gap-3 lg:items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-3 lg:items-start">
         <div className="relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
           <img
             src={images[index]}
@@ -103,10 +102,7 @@ export function VehicleGallery({ images, alt }: Props) {
             </div>
 
             {/* Desktop: thumbnail grid to the right of the main image */}
-            <div
-              className="hidden lg:grid grid-cols-2 gap-2 h-full"
-              style={{ gridTemplateRows: `repeat(${gridRows}, minmax(0, 1fr))` }}
-            >
+            <div className="hidden lg:grid grid-cols-2 gap-2">
               {gridThumbs.map((src, i) => {
                 const realIndex = i + 1;
                 const isLastCell = i === gridThumbs.length - 1;
@@ -115,7 +111,7 @@ export function VehicleGallery({ images, alt }: Props) {
                     key={src + i}
                     type="button"
                     onClick={() => (isLastCell && remaining > 0 ? setLightboxOpen(true) : setIndex(realIndex))}
-                    className={`relative overflow-hidden rounded-md ring-1 transition-all ${i === 0 ? "col-span-2" : ""} ${
+                    className={`relative aspect-[4/3] overflow-hidden rounded-md ring-1 transition-all ${i === 0 ? "col-span-2" : ""} ${
                       realIndex === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
                     }`}
                   >
