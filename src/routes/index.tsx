@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mail, Phone, MapPin, Clock, ShieldCheck, Wrench, Handshake, Gauge, Fuel, Calendar, Menu, X } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
 import catAutos from "@/assets/hero-lambo.jpg";
 import catCamper from "@/assets/cat-camper.jpg";
 import catMoto from "@/assets/cat-moto.jpg";
@@ -198,17 +197,7 @@ function Index() {
 
       {/* Hero */}
       <section id="top" className="relative min-h-[92vh] flex flex-col justify-end pb-24 pt-32 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src={heroImg}
-            alt="Fahrzeug im Showroom von Rabbit-Cars"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={900}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent" />
-        </div>
+        <div className="absolute inset-0 -z-10 bg-background" />
 
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-[46ch] space-y-6 animate-fade-up">
