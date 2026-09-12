@@ -18,7 +18,29 @@ Sehr Seltenes Modell, Toll Verarbeitet
 Automatik Getriebe
 180PS
 Spezial Navigationssystem
-Top Ausgestattet ...`,
+Top Ausgestattet mit:
+Elekt. Hebe-Bett für Grösseren Kofferraum Platz
+Truma Heizung
+Wechselrichter
+Aussengasanschluss
+Markise
+Zuziehhilfe
+Aussendusche
+LCD Bedienpanel
+Matratze mit Zusatzschicht
+Vorhang am Bett-Kompfende
+Swiss Paket
+Solarpanel 200W
+Wohnraumbatterie mit Monitor
+Standy-Lader
+Betthebemechanismus
+Adblue-Tanksicherung
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 79'900.–",
     firstRegistration: "04.2024",
     fuel: "Diesel",

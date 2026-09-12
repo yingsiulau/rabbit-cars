@@ -17,7 +17,11 @@ Sc Project Auspuffanlage mit Gutachten
 Offenes Kupplungsgehäuse
 Kurzheck
 Spezial Blinker Hinten
-Ilmberger Vollcarbon Verkleidung ...`,
+Ilmberger Vollcarbon Verkleidung
+Stickerset Original auf Carbonteile Montiert
+Neue Pirelli Rosso Iv Corsa Reifen Vorne + Hinten
+1.HAND von Mir Neu Gekauft und Gefahren Worden
+Immer bei BMW Service Durchgeführt`,
     price: "CHF 24'900.–",
     firstRegistration: "09.2023",
     fuel: "Benzin",
@@ -44,7 +48,8 @@ Ilmberger Vollcarbon Verkleidung ...`,
 Nummeriert Limitiert 166/250 Stück Weltweit
 Neu / Keine Kilometer
 Inkl. Originale Holzkiste von Supreme
-Heckumbau / Kurzheck (Original Vorhanden) ...`,
+Heckumbau / Kurzheck (Original Vorhanden)
+Spezial Blinker Vorne + Hinten (Original Vorhanden)`,
     price: "CHF 44'900.–",
     firstRegistration: "Neufahrzeug",
     fuel: "Benzin",
@@ -72,7 +77,20 @@ Nera Edition Nr 374/500 Weltweit
 Absoluter Neuzustand mit Viel Zubehör
 Einzelstück Komplettumbau
 Alle Originalteile Vorhanden
-ZARD Komplett-Auspuffanlage ...`,
+ZARD Komplett-Auspuffanlage
+Offene Kupplung von CNC Racing
+Roland Sands Design Zubehör
+Spezial Felgen
+Spezial Blinker Vorne + Hinten
+Kennzeichenhalter Seitlich
+UVM!!!
+
+Muss Unbedingt Live Gesehen Werden
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 24'900.–",
     firstRegistration: "08.2023",
     fuel: "Benzin",
@@ -99,7 +117,20 @@ ZARD Komplett-Auspuffanlage ...`,
 Bis 3.2028 Werksgarantie
 QD Komplett-Auspuffanlage (mit Gutachten)
 Carbon Felgen (Original Felgen Vorhanden Inkl. Pneu)
-Andere Übersetzung + ...`,
+Andere Übersetzung + Motoren Mapping von DUCATI
+Neue Pirelli Rosso Iv Reifen
+Spezial Fussraster Anlage
+Spezial Verstellbare Kupplungs und Bremshebel
+Kurzheck Inkl. Spezial Blinker
+Offenes Kupplungsgehäuse
+Diverse Carbon Applikationen wie:
+Carbon Winglets
+Carbon Heckabdeckung
+Carbon Lampenabdeckung Oben + Unten
+Carbon Seitenabdeckungen
+Carbon Schutzblech Vorne + Hinten
+Carbon Kettenschutz
+UVM!!`,
     price: "CHF 26'900.–",
     firstRegistration: "03.2024",
     fuel: "Benzin",
@@ -127,7 +158,23 @@ Einer der Schönsten Custombikes der Schweiz
 Muss in Echt Gesehen Werden, Unglaublich
 Brutaler Sound (Legal!)
 Alles Eingetragen und Geprüft
-300ER Reifen ...`,
+300ER Reifen Hinten
+Brembo Bremsanlage
+OEHLINS Gabel
+Luftfahrwerk Hinterachs
+Kesstech Komplettanlage mit Klappensteuerung
+Midland Luftfilter
+Spezial Lackierung
+Spezial Felgen
+Heckumbau Komplett Bündnerbike
+Rahmenumbau Bike Factory Graubünden
+Fustrasteranlage PM
+Spezial Tacho Integriert
+Blinker Integriert im Lenker und Heckschürze
+Sattel mit Rautensteppung
+UVM!!!
+
+Leasing/Kredit Möglich`,
     price: "CHF 79'900.–",
     firstRegistration: "08.2017",
     fuel: "Benzin",
@@ -150,10 +197,26 @@ Alles Eingetragen und Geprüft
     id: "12265647",
     name: "Harley-Davidson FLSTFBS Fat Boy CVO Custom",
     highlights: "Custom Dragster Umbau · CVO 110 Screaming Eagle · Komplett Auspuffanlage · Heckumbau",
-    description: `Custom Dragster Fat Bobber von Pm American Cycles
+    description: `Custom Dragster Fat Bobber von PM American Cycles
 Kompletter Umbau Geprüft und Alles Eingetragen
 CVO 110 Screaming Eagle
-Jekyll & Hyde Katalysator + Hauptschalldämpfer (Klappensteuerung) ...`,
+Jekyll & Hyde Katalysator + Hauptschalldämpfer (Klappensteuerung)
+Brachialer Sound (Legal mit Gutachten)
+Hinterradschwinge Umgebaut (Eingetragen)
+PM Bremsanlage (Eingetragen)
+RSD Clip on Lenker (Eingetragen)
+Spezial Felgen (Eingetragen)
+PM Fussraster (Eingetragen)
+Custom Paintjob
+Diverse Carbon Teile
+LED Scheinwerfer
+LED Blinker Vorne + Hinten
+Kennzeichen Seitlich
+Spezial Sattel
+240ER Reifen Hinten
+
+Dragster Harley mit Brachialem Sound
+Einzelstück`,
     price: "CHF 22'900.–",
     firstRegistration: "03.2016",
     fuel: "Benzin",

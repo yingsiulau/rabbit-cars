@@ -33,66 +33,68 @@ export function VehicleGallery({ images, alt }: Props) {
 
   return (
     <div>
-      <div className="relative aspect-[16/10] overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
-        <img
-          src={images[index]}
-          alt={alt}
-          width={1600}
-          height={1000}
-          className="w-full h-full object-cover cursor-zoom-in transition-opacity"
-          onClick={() => setLightboxOpen(true)}
-        />
+      <div className="flex flex-col lg:flex-row gap-3 lg:items-stretch">
+        <div className="relative flex-1 aspect-[16/10] overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
+          <img
+            src={images[index]}
+            alt={alt}
+            width={1600}
+            height={1000}
+            className="w-full h-full object-cover cursor-zoom-in transition-opacity"
+            onClick={() => setLightboxOpen(true)}
+          />
 
-        <button
-          type="button"
-          onClick={() => setLightboxOpen(true)}
-          aria-label="Bild vergrössern"
-          className="absolute top-3 right-3 size-9 rounded-full bg-background/70 backdrop-blur-sm ring-1 ring-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-        >
-          <Expand className="size-4" />
-        </button>
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            aria-label="Bild vergrössern"
+            className="absolute top-3 right-3 size-9 rounded-full bg-background/70 backdrop-blur-sm ring-1 ring-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            <Expand className="size-4" />
+          </button>
+
+          {hasMultiple && (
+            <>
+              <button
+                type="button"
+                onClick={prev}
+                aria-label="Vorheriges Bild"
+                className="absolute left-3 top-1/2 -translate-y-1/2 size-10 rounded-full bg-background/70 backdrop-blur-sm ring-1 ring-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              >
+                <ChevronLeft className="size-5" />
+              </button>
+              <button
+                type="button"
+                onClick={next}
+                aria-label="Nächstes Bild"
+                className="absolute right-3 top-1/2 -translate-y-1/2 size-10 rounded-full bg-background/70 backdrop-blur-sm ring-1 ring-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
+              >
+                <ChevronRight className="size-5" />
+              </button>
+              <span className="absolute bottom-3 right-3 text-xs font-medium bg-background/70 backdrop-blur-sm px-2.5 py-1 rounded-full ring-1 ring-border">
+                {index + 1} / {images.length}
+              </span>
+            </>
+          )}
+        </div>
 
         {hasMultiple && (
-          <>
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Vorheriges Bild"
-              className="absolute left-3 top-1/2 -translate-y-1/2 size-10 rounded-full bg-background/70 backdrop-blur-sm ring-1 ring-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
-            >
-              <ChevronLeft className="size-5" />
-            </button>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Nächstes Bild"
-              className="absolute right-3 top-1/2 -translate-y-1/2 size-10 rounded-full bg-background/70 backdrop-blur-sm ring-1 ring-border flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background"
-            >
-              <ChevronRight className="size-5" />
-            </button>
-            <span className="absolute bottom-3 right-3 text-xs font-medium bg-background/70 backdrop-blur-sm px-2.5 py-1 rounded-full ring-1 ring-border">
-              {index + 1} / {images.length}
-            </span>
-          </>
+          <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto pb-1 lg:pb-0 lg:w-24 lg:shrink-0">
+            {images.map((src, i) => (
+              <button
+                key={src + i}
+                type="button"
+                onClick={() => setIndex(i)}
+                className={`shrink-0 w-20 lg:w-full aspect-square overflow-hidden rounded-md ring-1 transition-all ${
+                  i === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
+                }`}
+              >
+                <img src={src} alt="" width={160} height={160} className="w-full h-full object-cover" loading="lazy" />
+              </button>
+            ))}
+          </div>
         )}
       </div>
-
-      {hasMultiple && (
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-          {images.map((src, i) => (
-            <button
-              key={src + i}
-              type="button"
-              onClick={() => setIndex(i)}
-              className={`shrink-0 w-20 aspect-square overflow-hidden rounded-md ring-1 transition-all ${
-                i === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
-              }`}
-            >
-              <img src={src} alt="" width={160} height={160} className="w-full h-full object-cover" loading="lazy" />
-            </button>
-          ))}
-        </div>
-      )}
 
       {lightboxOpen && (
         <div

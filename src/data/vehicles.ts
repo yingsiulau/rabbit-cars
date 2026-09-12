@@ -50,7 +50,16 @@ Gratis Service
 360GRAD Kamera + Rückfahrkamera
 LED Scheinwerfer
 M Packet
-Harman ...`,
+Harman Kardon Soundsystem
+Glas-Schiebedach
+Head-Up Display
+Keyless Entry + Go
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 37'900.–",
     firstRegistration: "03.2023",
     fuel: "Mild-Hybrid Diesel/Elektro",
@@ -79,7 +88,26 @@ Tolle Farbkombination Perlmutweiss Metallic / Rot
 Aus Seriöser 1.HAND
 Wenig Kilometer
 CH-Fahrzeug
-Stets bei der Gleichen Maserati Garage Gewartet ...`,
+Stets bei der Gleichen Maserati Garage Gewartet
+Frisch ab Maserati Service
+Ab MFK
+12MONATE Garantie
+Neue Sommerreifen
+Inkl. Car-Cover + Batterie Ladegerät
+Top Ausstattung wie:
+Carbon Applikationen
+21" Sport Felgen
+Schiebedach
+Sitzheizung
+Rückfahrkamera
+PDC
+Navigation / DAB / Bluetooth
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 37'900.–",
     firstRegistration: "05.2014",
     fuel: "Benzin",
@@ -110,7 +138,26 @@ Frisch ab Service
 CH Fahrzeug mit Gratis Service bis 100'000KM
 8FACH Bereift
 12MONATE Garantie
-Neue ...`,
+Neue Reifen
+Top Ausstattung wie:
+AMG Line
+Ambiente Beleuchtung
+Sitzheizung
+Burmester Soundsystem
+Glas-Schiebedach
+360GRAD Kamera + Rückfahrkamera
+LED Scheinwerfer
+Head Up Display
+Spurhalte Assistent
+Totwinkel Assistent
+Elekt. Sitze + Memory
+Virtual Cockpit
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 39'900.–",
     firstRegistration: "06.2019",
     fuel: "Benzin",
@@ -141,7 +188,16 @@ Frisch ab MFK
 Tolle Ausstattung wie:
 Rückfahrkamera
 IQ LED Scheinwerfer
-Sitzheizung ...`,
+Sitzheizung
+Lenkradheizung
+Abstandsregeltempomat
+Apple Carplay
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 22'900.–",
     firstRegistration: "05.2022",
     fuel: "Diesel",
@@ -164,12 +220,24 @@ Sitzheizung ...`,
     id: "20749056",
     name: "Mercedes-Benz G 500 AMG Line 9G-Tronic",
     highlights: "Emerald Green · Frisch ab MFK · 12 Monate Garantie · Burmester Soundsystem · AMG Line",
-    description: `Emerald Green
+    description: `Wunderschöner G500 mit AMG Line
+Emerald Green Metallic
 Frisch ab MFK
 12MONATE Garantie
+Tolle Ausstattung wie:
+Schiebedach
 Burmester Soundsystem
-AMG Line
-Allrad, SUV / Geländewagen`,
+Sitzheizung + Sitzkühlung
+360GRAD Kamera + Rückfahrkamera
+LED Scheinwerfer
+Sitzheizung Hinten
+Abstandsregeltempomat
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 89'900.–",
     firstRegistration: "11.2018",
     fuel: "Benzin",
@@ -192,13 +260,25 @@ Allrad, SUV / Geländewagen`,
     id: "20732126",
     name: "Ferrari 488 GTB 3.9 V8",
     highlights: "Frisch ab MFK · Neue Reifen · Carbon Applikationen · JBL Soundsystem · Alcantara Ausstattung",
-    description: `Frisch ab MFK
-Neue Reifen
-Carbon Applikationen
+    description: `Schöner 488 Gtb mit Dezenter Farbkombination
+Frisch ab MFK
+Frisch ab Service
+Neue Sommerreifen
+12MONATE Garantie
+Alcantara Leder Ausstattung
+Kontrastnähte in Weiss
 JBL Soundsystem
+Carbon Applikationen
+Carbon Lenkrad
 Carbon Side Airsplitter
-Alcantara Ausstattung
-Hinterradantrieb, Coupé`,
+Rückfahrkamera + Frontkamera
+Apple Carplay
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 159'900.–",
     firstRegistration: "10.2016",
     fuel: "Benzin",
@@ -222,14 +302,29 @@ Hinterradantrieb, Coupé`,
     id: "20722738",
     name: "Porsche Cayenne Turbo",
     highlights: "Top gepflegt · Nahezu Vollausstattung · 8-fach bereift · Frisch ab Service · Burmester Sound",
-    description: `Top Gepflegt
-Nahezu Vollausstattung
-8FACH Bereift
+    description: `Wunderschöner Porsche Cayenne Turbo
+Sehr Gepflegter Zustand
+8FACH Bereift mit Komplettfelgen
+12MONATE Garantie
 Frisch ab Service
-Garantie
+Top Ausstattung wie:
 Burmester Soundsystem
-Anhängerkupplung El. Abschwenkbar
-Allrad, SUV / Geländewagen`,
+Glasdach
+18WEG Elekt. Sitze + Memory
+LED Scheinwerfer
+Abstandsregeltempomat
+Elekt. Anhängerkupplung
+360GRAD Kamera + Rückfahrkamera
+Sport Chrono Packet
+Sitzheizung + Sitzkühlung
+4ZONEN Klimaanlage
+Luftfahrwerk
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 48'900.–",
     firstRegistration: "04.2015",
     fuel: "Benzin",
@@ -258,7 +353,31 @@ Tolle Farbkombination
 Bis 5.2028 Porsche Approved Vollgarantie
 Sehr Gepflegter Zustand
 Seriöser Vorbesitzer
-8FACH Bereift mit Porsche ...`,
+8FACH Bereift mit Porsche Winter Kompletträder
+Frisch ab MFK
+Frisch ab Porsche Service
+Neue Bremsen Vorne + Hinten
+Neue Reifen
+Nahezu Vollaustattung wie:
+Luftfahrwerk
+LED Scheinwerfer
+360GRAD Kamera + Rückfahrkamera
+Abstandsregeltempomat
+Sport Auspuffanlage
+Glas-Schiebedach
+Alcantara Dachhimmel
+Carbon Applikationen
+Vollleder Ausstattung Bicolor
+18 Weg Elekt. Verstellbare Sitze
+21" Felgen
+Sport Chrono Packet
+Bose Soundsystem
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 41'900.–",
     firstRegistration: "01.2017",
     fuel: "Benzin",
@@ -288,7 +407,26 @@ Sehr Gepflegt
 Special Edition
 Frisch ab MFK + Frisch ab Service
 12MONATE Garantie
-Nahezu Vollausgestattet ...`,
+Nahezu Vollausgestattet mit:
+Special Edition Packet
+Premium Packet
+Burmester Soundsystem
+Glas-Schiebedach
+Alcantara Dachhimmel
+Multibeam LED Scheinwerfer
+Sitzheizung + Sitzkühlung
+Elekt. Sitze + Memory
+360GRAD Kamera + Rückfahrkamera
+Matt-Carbon Applikationen
+Ambiente Beleuchtung
+AMG Ride Control+
+21"AMG Felgen
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 74'900.–",
     firstRegistration: "03.2022",
     fuel: "Mild-Hybrid Benzin/Elektro",
@@ -320,7 +458,11 @@ PDC Hinten
 Tempomat
 8FACH Bereift
 UVM!!!
-Leasing/kredit/eintausch Möglich ...`,
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 9'900.–",
     firstRegistration: "09.2018",
     fuel: "Benzin",
@@ -350,7 +492,26 @@ CH-Fahrzeug
 12MONATE Garantie
 Gratis Service bis 146000KM Inkl. Flüssigkeiten
 8FACH Bereift (Originalfelgen)
-H&R Tieferlegung ...`,
+H&R Tieferlegung
+Nahezu Vollausstattung mit:
+Glas Applikationen
+Laser Light
+Carbon Core Packet
+Harman Kardon Soundsystem
+Alcantara Dachhimmel
+Vollleder Ausstattung
+Sitzheizung + Sitzkühlung
+Lenkradheizung
+Softclose
+Head-Up Display
+360GRAD Kamera + Rückfahrkamera
+Individual Lederausstattung
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 52'900.–",
     firstRegistration: "01.2019",
     fuel: "Benzin",
@@ -375,10 +536,23 @@ H&R Tieferlegung ...`,
     name: "Porsche Cayman GT4",
     highlights: "Porsche Approved Garantie · PPF Schutzfolie · Martini Design · Schalensitze",
     description: `Wunderschöner Porsche GT4 im Martini Design
-Neuwertiger Zustand (Folierung Kann Entfernt Werden)
+Neuwertiger Zustand
+(Folierung Kann Entfernt Werden)
 Front Inkl. Seiten in PPF Schutzfolie Foliert
 Frisch ab MFK
-Frisch ab Service (Servicegepflegt ...`,
+Frisch ab Service (Servicegpflegt bei Porsche)
+Porsche Approved Garantie bis 10.2026 (Verlängerbar)
+Carbon Schalensitze Inkl. 3PUNKTE Gurte
+Überrollkäfig
+Sportauspuffanlage
+Volllederausstattung
+Fahrwerksverstellung
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 82'900.–",
     firstRegistration: "08.2016",
     fuel: "Benzin",
@@ -408,7 +582,20 @@ H&R Tieferlegung (Eingetragen)
 JP Racing Felgen 20" (Eingetragen)
 8FACH Bereift
 Neue Sommerreifen
-Frisch ab Mercedes ...`,
+Frisch ab Mercedes Service
+Ambiente Beleuchtung
+Rückfahrkamera
+LED Scheinwerfer
+Glas-Schiebedach
+Diamond Grill
+Sitzheizung
+Virtual Cockpit
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 43'900.–",
     firstRegistration: "10.2020",
     fuel: "Diesel",
@@ -437,7 +624,17 @@ CH-Fahrzeug mit Porsche Werksgarantie
 Tolle Ausstattung wie:
 21" Felgen
 Panoramadach
-Sitzheizung Vorne+hinten ...`,
+Sitzheizung Vorne+hinten
+Vollleder Ausstattung
+Ambientebeleuchtung
+Abstandsregeltempomat
+360GRAD Kamera + Rückfahrkamera
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 64'900.–",
     firstRegistration: "04.2023",
     fuel: "Elektro",
@@ -465,7 +662,35 @@ Sitzheizung Vorne+hinten ...`,
 Komplett in PPF Schutzfolie Foliert (bei 0KM)
 Vor OPF Modell Inkl. Auspuff Klappensteuerung
 Nahezu Vollausstattung
-High Assistant ...`,
+High Assistant
+Fully Electric and Heated Seats
+Inverted Stitching
+Headlamps Package
+Rear View Camera
+Windscreen Frame of Front Bonnet in Shy Black
+Passenger Display
+Contrast Color Trim
+Floor Mats With Leader Border
+Smartphone Interface (Apple Car Play)
+Stitching Inverted
+Carpets Bicolor
+Embroidered Lamborghini Logo on Headrest
+Interior Details Carbon Package
+Q-Citura on Roof, + Door Panel
+Steering Wheel Carbon Package Corsa Tex
+Rims Alanero 21/22 Shiny Black
+Cupholder on Dashborder
+Nero Lucido CCB Brak Calipers
+Eninge Frame Inserts on Cofango in Shiny Black
+Style Package-High Gloss Black
+Verde Citrea
+
+(Professional Pictures by Phpics Photography)
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 508'900.–",
     firstRegistration: "05.2025",
     fuel: "Plug-in Hybrid",
@@ -495,7 +720,11 @@ Automatik Getriebe
 Klappscheinwerfer
 Neue Reifen
 UVM!!!
-Eintausch Möglich ...`,
+
+Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 17'900.–",
     firstRegistration: "04.1993",
     fuel: "Benzin",
@@ -522,7 +751,29 @@ Eintausch Möglich ...`,
 CH-Fahrzeug aus Seriöser Hand
 2JAHRE Porsche Approved bis 7.2028
 Frisch ab Grossem Service
-8FACH Bereift mit Spezialfelgen Sommer + Winter ...`,
+8FACH Bereift mit Spezialfelgen Sommer + Winter
+KW Tieferlegungsfedern
+Alles Eingetragen
+Vossen 20/21" Felgen
+Titan Forged 20/21 Felgen
+Nahezu Vollausstattung wie:
+Keramik Bremsanlage
+Luftfahrwerk Vorderachse
+Abstandsregeltempomat (ACC)
+360GRAD Kamera
+Burmester High End Soundsystem
+Sitzheizung + Sitzkühlung
+Volllederausstattung
+Sport Chrono Paket
+Sportabgasanlage
+UVM!!!
+
+Wird im Kundenauftrag Verkauft
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 199'900.–",
     firstRegistration: "07.2022",
     fuel: "Benzin",
@@ -552,7 +803,22 @@ Frisch ab MFK + Frisch ab Service
 12MONATE Garantie
 4 Sommerreifen Zusätzlich
 Top Ausstattung wie:
-Apple Carplay / Android ...`,
+Apple Carplay / Android Auto Nachrüstung
+Spezial Heckleuchten
+21" Turbo Felgen
+Burmester Soundsystem
+Alcantara Dachhimmel
+Schiebedach
+Rückfahrkamera
+Elektl. Heckklappe
+Elekt. Sitze
+Luftfahrwerk
+UVM!!!
+
+Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 18'900.–",
     firstRegistration: "09.2010",
     fuel: "Benzin",
@@ -583,7 +849,18 @@ Neue Bremsen Vorne+hinten
 Nahezu Neue Reifen
 Frontspoiler
 Distanzscheiben
-Tolle ...`,
+Tolle Ausstattung wie:
+Rückfahrkamera
+Sitzheizung+sitzkühlung
+Navigationssystem
+Tempomat
+Keyless Entry + Go
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 38'900.–",
     firstRegistration: "12.2018",
     fuel: "Benzin",
@@ -610,7 +887,21 @@ Tolle ...`,
     description: `Wunderschöner und Seltener Murcielago 6.2 LP580 Le Mans Edition
 CH-Fahrzeug mit Kompletter Service Historie Stets bei Lamborghini
 Sehr Gepflegt aus Seriösem Vorbesitz
-Neue Kupplung / Neue ...`,
+Neue Kupplung / Neue Reifen
+Fahrzeug Wird Frisch ab Service bei Lamborghini Verkauft
+Originaler Le Mans Edition by Affolter mit:
+Work Felgen in Wert von 15'000.- (Eingetragen)
+Italcardesign Heckspoiler (Inkl. Rückfahrkamera) (Eingetragen)
+Originalfelgen Ebenfalls Vorhanden
+Spezial Multimediasystem mit Bluetooth
+Liftsystem für Vorderachse (ab Werk)
+
+Eine Absolute Rarität mit Wertzuwachs
+
+Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
     price: "CHF 229'800.–",
     firstRegistration: "05.2004",
     fuel: "Benzin",

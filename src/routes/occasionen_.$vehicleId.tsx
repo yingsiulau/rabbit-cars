@@ -32,26 +32,35 @@ function VehicleDetailPage() {
     <div className="bg-background text-foreground min-h-screen">
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-          <Link to="/" className="block h-6 sm:h-7 shrink-0">
-            <img
-              src={logo}
-              alt="Rabbit-Cars"
-              className="h-full w-auto brightness-0 invert"
-              width={600}
-              height={120}
-            />
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link to="/" hash="kontakt" className="hidden sm:inline text-sm font-medium hover:text-accent transition-colors">
-              Kontakt
+          <div className="flex items-center gap-6 min-w-0">
+            <Link to="/" className="block h-6 sm:h-7 shrink-0">
+              <img
+                src={logo}
+                alt="Rabbit-Cars"
+                className="h-full w-auto brightness-0 invert"
+                width={600}
+                height={120}
+              />
             </Link>
             <Link
               to="/occasionen"
               hash={CATEGORY_ANCHOR[vehicle.category]}
               className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2"
             >
-              <ArrowLeft className="size-4" /> Zurück zur Übersicht
+              <ArrowLeft className="size-4" /> <span className="hidden sm:inline">Zurück zur Übersicht</span>
             </Link>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link to="/" hash="kontakt" className="hidden sm:inline text-sm font-medium hover:text-accent transition-colors">
+              Kontakt
+            </Link>
+            <a
+              href="tel:+41793006060"
+              className="inline-flex text-sm font-medium bg-primary text-primary-foreground py-2 px-4 rounded-sm ring-1 ring-primary hover:bg-accent hover:ring-accent active:scale-[0.98] transition-all duration-200 items-center gap-2"
+            >
+              <Phone className="size-3.5" aria-hidden="true" />
+              <span className="hidden sm:inline">Termin</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -63,9 +72,6 @@ function VehicleDetailPage() {
           {/* Main column */}
           <div className="lg:col-span-2 space-y-10 lg:order-1">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-3">
-                Erstzulassung {vehicle.firstRegistration}
-              </span>
               <h1 className="font-display text-4xl sm:text-5xl font-medium leading-[1.05]">{vehicle.name}</h1>
             </div>
 
@@ -96,6 +102,9 @@ function VehicleDetailPage() {
               <div className="text-3xl font-display">{vehicle.price}</div>
 
               <div className="grid grid-cols-2 gap-4 p-6 rounded-xl bg-panel ring-1 ring-border">
+                <div className="flex items-center gap-2 text-sm">
+                  <Calendar className="size-4 text-accent shrink-0" /> {vehicle.firstRegistration}
+                </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Gauge className="size-4 text-accent shrink-0" /> {vehicle.km}
                 </div>
