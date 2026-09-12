@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, X } from "lucide-react";
+import { resizeUrl } from "@/lib/image-url";
 
 type Props = {
   images: string[];
@@ -96,7 +97,7 @@ export function VehicleGallery({ images, alt }: Props) {
                     i === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
                   }`}
                 >
-                  <img src={src} alt="" width={160} height={160} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={resizeUrl(src, 200)} alt="" width={160} height={160} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -115,7 +116,7 @@ export function VehicleGallery({ images, alt }: Props) {
                       realIndex === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
                     }`}
                   >
-                    <img src={src} alt="" className="w-full h-full object-cover" loading="lazy" />
+                    <img src={resizeUrl(src, 400)} alt="" className="w-full h-full object-cover" />
                     {isLastCell && remaining > 0 && (
                       <div className="absolute inset-0 bg-background/70 backdrop-blur-sm flex items-center justify-center text-sm font-medium">
                         +{remaining} Bilder

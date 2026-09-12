@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Gauge, Fuel, Zap, Cog, Phone } from "lucide-react";
 import logo from "@/assets/rabbit-cars-logo.png";
+import { resizeUrl } from "@/lib/image-url";
 import { vehicles, type Vehicle } from "@/data/vehicles";
 import { campers } from "@/data/campers";
 import { motorcycles } from "@/data/motorcycles";
@@ -27,7 +28,7 @@ function VehicleCard({ v }: { v: Vehicle }) {
     >
       <div className="aspect-[4/3] overflow-hidden bg-background">
         <img
-          src={v.image}
+          src={resizeUrl(v.image, 800)}
           alt={v.name}
           loading="lazy"
           width={1200}
