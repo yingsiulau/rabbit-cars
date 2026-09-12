@@ -277,7 +277,7 @@ function Index() {
             </div>
           </a>
 
-          <div className="grid grid-rows-2 gap-4">
+          <div className="grid grid-rows-2 gap-4 h-96">
             <Link to="/occasionen" hash="camper" className="group relative overflow-hidden rounded-xl ring-1 ring-border">
               <img src={catCamper} alt="Camper und Vans" loading="lazy" width={800} height={450} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
