@@ -94,15 +94,16 @@ function OccasionenPage() {
               <Phone className="size-3.5" aria-hidden="true" />
               <span className="hidden sm:inline">Termin</span>
             </a>
-            <Link to="/" className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2">
-              <ArrowLeft className="size-4" /> <span className="hidden sm:inline">Zurück</span>
-            </Link>
           </div>
         </div>
       </nav>
 
       {/* Header */}
       <header className="pt-32 pb-8 max-w-7xl mx-auto px-6">
+        <Link to="/" className="mb-4 text-sm font-medium text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2">
+          <ArrowLeft className="size-4" /> Zurück
+        </Link>
+
         <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground block mb-4">
           Occasionspark · {vehicles.length} Autos · {campers.length} Camper · {motorcycles.length} Motorräder
         </span>
