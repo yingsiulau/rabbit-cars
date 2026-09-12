@@ -32,24 +32,15 @@ function VehicleDetailPage() {
     <div className="bg-background text-foreground min-h-screen">
       <nav className="fixed top-0 w-full z-50 bg-background/70 backdrop-blur-xl border-b border-border">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-6 min-w-0">
-            <Link to="/" className="block h-6 sm:h-7 shrink-0">
-              <img
-                src={logo}
-                alt="Rabbit-Cars"
-                className="h-full w-auto brightness-0 invert"
-                width={600}
-                height={120}
-              />
-            </Link>
-            <Link
-              to="/occasionen"
-              hash={CATEGORY_ANCHOR[vehicle.category]}
-              className="text-sm font-medium hover:text-accent transition-colors inline-flex items-center gap-2"
-            >
-              <ArrowLeft className="size-4" /> <span className="hidden sm:inline">Zurück zur Übersicht</span>
-            </Link>
-          </div>
+          <Link to="/" className="block h-6 sm:h-7 shrink-0">
+            <img
+              src={logo}
+              alt="Rabbit-Cars"
+              className="h-full w-auto brightness-0 invert"
+              width={600}
+              height={120}
+            />
+          </Link>
           <div className="flex items-center gap-4">
             <Link to="/" hash="kontakt" className="hidden sm:inline text-sm font-medium hover:text-accent transition-colors">
               Kontakt
@@ -66,6 +57,14 @@ function VehicleDetailPage() {
       </nav>
 
       <section className="pt-32 pb-24 max-w-6xl mx-auto px-6">
+        <Link
+          to="/occasionen"
+          hash={CATEGORY_ANCHOR[vehicle.category]}
+          className="mb-4 text-sm font-medium text-muted-foreground hover:text-accent transition-colors inline-flex items-center gap-2"
+        >
+          <ArrowLeft className="size-4" /> Zurück zur Übersicht
+        </Link>
+
         <VehicleGallery images={gallery} alt={vehicle.name} />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
