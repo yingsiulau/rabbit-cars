@@ -97,7 +97,7 @@ export function VehicleGallery({ images, alt }: Props) {
                     i === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
                   }`}
                 >
-                  <img src={resizeUrl(src, 200)} alt="" width={160} height={160} className="w-full h-full object-cover" />
+                  <img src={resizeUrl(src, 200)} alt="" width={160} height={160} className="w-full h-full object-cover" loading="lazy" />
                 </button>
               ))}
             </div>
@@ -116,7 +116,7 @@ export function VehicleGallery({ images, alt }: Props) {
                       realIndex === index ? "ring-accent ring-2" : "ring-border hover:ring-accent/40"
                     }`}
                   >
-                    <img src={resizeUrl(src, 400)} alt="" className="w-full h-full object-cover" />
+                    <img src={resizeUrl(src, 400)} alt="" className="w-full h-full object-cover" loading="lazy" />
                     {isLastCell && remaining > 0 && (
                       <div className="absolute inset-0 bg-background/70 backdrop-blur-sm flex items-center justify-center text-sm font-medium">
                         +{remaining} Bilder
