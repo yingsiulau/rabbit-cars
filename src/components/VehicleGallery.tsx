@@ -40,7 +40,7 @@ export function VehicleGallery({ images, alt }: Props) {
   return (
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-[1.7fr_1fr] gap-3 lg:items-stretch">
-        <div className="relative aspect-[16/10] lg:aspect-auto lg:h-full overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-border bg-panel group">
           <img
             src={images[index]}
             alt={alt}
