@@ -80,6 +80,20 @@ for (const id of vehicleIds) {
   console.log(`wrote ${outFile} (status ${status}, ${html.length} bytes)`);
 }
 
+// Sitemap — only public, indexable pages (mirrors robots.txt's Disallow: /as24).
+const sitemapUrls = [
+  { loc: `${SITE_ORIGIN}/`, priority: "1.0" },
+  { loc: `${SITE_ORIGIN}/occasionen`, priority: "0.9" },
+  ...vehicleIds.map((id) => ({ loc: `${SITE_ORIGIN}/occasionen/${id}`, priority: "0.8" })),
+];
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map((u) => `  <url>\n    <loc>${u.loc}</loc>\n    <priority>${u.priority}</priority>\n  </url>`).join("\n")}
+</urlset>
+`;
+await writeRoute("sitemap.xml", sitemapXml);
+console.log(`wrote sitemap.xml (${sitemapUrls.length} urls)`);
+
 // Any unmatched path renders the root's notFoundComponent with a real 404
 // status — GitHub Pages serves this file's contents for any unknown URL.
 const { html: notFoundHtml, status: notFoundStatus } = await renderRoute(`${basePath}/__404__`);

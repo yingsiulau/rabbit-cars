@@ -7,15 +7,22 @@ import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/occasionen")({
   component: OccasionenPage,
-  head: () => ({
-    meta: [
-      { title: "Occasionen · Rabbit-Cars Gümligen" },
-      {
-        name: "description",
-        content: `Aktueller Occasionspark von Rabbit-Cars in Gümligen – ${vehicles.length} Autos, ${campers.length} Camper und ${motorcycles.length} Motorräder: Porsche, BMW, Mercedes, Audi, Lamborghini, Ducati, Harley-Davidson und mehr.`,
-      },
-    ],
-  }),
+  head: () => {
+    const title = "Occasionen · Rabbit-Cars Gümligen";
+    const description = `Aktueller Occasionspark von Rabbit-Cars in Gümligen – ${vehicles.length} Autos, ${campers.length} Camper und ${motorcycles.length} Motorräder: Porsche, BMW, Mercedes, Audi, Lamborghini, Ducati, Harley-Davidson und mehr.`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: "https://rabbit-cars.ch/occasionen" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+      ],
+      links: [{ rel: "canonical", href: "https://rabbit-cars.ch/occasionen" }],
+    };
+  },
 });
 
 function VehicleCard({ v }: { v: Vehicle }) {

@@ -87,8 +87,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Rabbit-Cars – Ihr Occasionsspezialist in Gümligen seit über 40 Jahren" },
       { name: "twitter:description", content: "Rabbit-Cars in Gümligen bei Bern: Familienbetrieb mit über 40 Jahren Tradition. Autos, Camper & Vans, Motorräder – geprüfte Occasionen und persönliche Beratung." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c0fd0ff4-b0a0-4d83-b107-d9c896a8fb40" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c0fd0ff4-b0a0-4d83-b107-d9c896a8fb40" },
+      { property: "og:image", content: "https://rabbit-cars.ch/og-image.jpg" },
+      { name: "twitter:image", content: "https://rabbit-cars.ch/og-image.jpg" },
+      {
+        "script:ld+json": {
+          "@context": "https://schema.org",
+          "@type": "AutomotiveBusiness",
+          name: "Rabbit-Cars",
+          image: "https://rabbit-cars.ch/og-image.jpg",
+          url: "https://rabbit-cars.ch/",
+          telephone: "+41793006060",
+          email: "info@rabbit-cars.ch",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Worbstrasse 158",
+            postalCode: "3073",
+            addressLocality: "Gümligen",
+            addressCountry: "CH",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:30", closes: "12:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "13:00", closes: "18:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "12:30" },
+          ],
+        },
+      },
     ],
     links: [
       {
@@ -114,7 +137,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="de-CH">
       <head>
         <HeadContent />
       </head>

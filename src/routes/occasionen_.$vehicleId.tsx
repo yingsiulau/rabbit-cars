@@ -13,14 +13,54 @@ export const Route = createFileRoute("/occasionen_/$vehicleId")({
     if (!vehicle) throw notFound();
     return vehicle;
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.name} · Rabbit-Cars Gümligen` },
-          { name: "description", content: `${loaderData.name} – ${loaderData.price}, ${loaderData.km}, ${loaderData.fuel}. ${loaderData.highlights}` },
-        ]
-      : [],
-  }),
+  head: ({ loaderData }) => {
+    if (!loaderData) return { meta: [] };
+
+    const title = `${loaderData.name} · Rabbit-Cars Gümligen`;
+    const description = `${loaderData.name} – ${loaderData.price}, ${loaderData.km}, ${loaderData.fuel}. ${loaderData.highlights}`;
+    const url = `https://rabbit-cars.ch/occasionen/${loaderData.id}`;
+    const priceNumber = Number(loaderData.price.replace(/[^0-9]/g, ""));
+    const mileageNumber = Number(loaderData.km.replace(/[^0-9]/g, ""));
+
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:url", content: url },
+        { property: "og:image", content: loaderData.image },
+        { property: "og:type", content: "product" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: loaderData.image },
+        {
+          "script:ld+json": {
+            "@context": "https://schema.org",
+            "@type": "Vehicle",
+            name: loaderData.name,
+            description: loaderData.description ?? loaderData.highlights,
+            image: [loaderData.image, ...(loaderData.images ?? [])],
+            url,
+            vehicleTransmission: loaderData.transmission,
+            fuelType: loaderData.fuel,
+            ...(Number.isFinite(mileageNumber) && mileageNumber > 0
+              ? { mileageFromOdometer: { "@type": "QuantitativeValue", value: mileageNumber, unitCode: "KMT" } }
+              : {}),
+            offers: {
+              "@type": "Offer",
+              price: priceNumber || undefined,
+              priceCurrency: "CHF",
+              availability: "https://schema.org/InStock",
+              url,
+              seller: { "@type": "AutomotiveBusiness", name: "Rabbit-Cars" },
+            },
+          },
+        },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
 });
 
 function VehicleDetailPage() {

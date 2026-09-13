@@ -12,6 +12,9 @@ import { motorcycles } from "@/data/motorcycles";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    links: [{ rel: "canonical", href: "https://rabbit-cars.ch/" }],
+  }),
 });
 
 // Marken früherer, inzwischen verkaufter Fahrzeuge — bleiben hier bewusst
