@@ -1,5 +1,5 @@
 // Mock-Daten der aktuellen Rabbit-Cars Motorräder (Stand: Scrape von
-// motoscout24.ch/de/s/seller-63793, 31.07.2026).
+// motoscout24.ch/de/s/seller-63793, 13.10.2026).
 // Später wird dieses Modul durch einen echten Fetch ersetzt (AS24 Händler-Feed / Listing API).
 
 import type { Vehicle } from "./vehicles";
@@ -8,38 +8,6 @@ const BASE = "https://www.motoscout24.ch/de/d";
 const IMG = (path: string) => `https://listing-images.motoscout24.ch/listing/${path}?w=1920`;
 
 const rawMotorcycles: Omit<Vehicle, "category">[] = [
-  {
-    id: "20520463",
-    name: "BMW M 1000 R Competition Full Carbon",
-    highlights: "Voll Carbon · SC Project Auspuff · Spezial Kupplungsgehäuse · 1. Hand · Service immer bei BMW",
-    description: `Eine der Schönsten BMW M1000R Competition in Vollcarbon
-Sc Project Auspuffanlage mit Gutachten
-Offenes Kupplungsgehäuse
-Kurzheck
-Spezial Blinker Hinten
-Ilmberger Vollcarbon Verkleidung
-Stickerset Original auf Carbonteile Montiert
-Neue Pirelli Rosso Iv Corsa Reifen Vorne + Hinten
-1.HAND von Mir Neu Gekauft und Gefahren Worden
-Immer bei BMW Service Durchgeführt`,
-    price: "CHF 24'900.–",
-    firstRegistration: "09.2023",
-    fuel: "Benzin",
-    km: "18'000 km",
-    power: "209 PS (154 kW)",
-    transmission: "Schaltgetriebe manuell",
-    image: IMG("463/20520463/1797517439.jpeg"),
-    images: [
-      "https://listing-images.motoscout24.ch/listing/463/20520463/241226176.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/463/20520463/133769072.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/463/20520463/1915169743.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/463/20520463/759894489.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/463/20520463/709564735.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/463/20520463/490461590.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/463/20520463/1169027982.jpeg?w=1920",
-    ],
-    detailUrl: `${BASE}/bmw-m-1000-r-competition-full-carbon-20520463`,
-  },
   {
     id: "12265610",
     name: "Ducati Streetfighter V4 S Supreme Edition",
@@ -112,7 +80,7 @@ Irrtümer und Zwischenverkauf Vorbehalten`,
   {
     id: "20520504",
     name: "Ducati Streetfighter V2",
-    highlights: "Carbon Felgen · Diverse Carbon Applikationen · QD Komplettauspuffanlage · Kurzheck",
+    highlights: "Carbon Felgen · Diverse Carbon Applikationen · QD Komplettauspuffanlage · Spezial Fussraster · Kurzheck · Offenes Kupplungsgehäuse",
     description: `Wunderschöne Streetfighter V2 aus 1.HAND
 Bis 3.2028 Werksgarantie
 QD Komplett-Auspuffanlage (mit Gutachten)
@@ -192,48 +160,6 @@ Leasing/Kredit Möglich`,
       "https://listing-images.motoscout24.ch/listing/297/12632297/190571295.jpeg?w=1920",
     ],
     detailUrl: `${BASE}/harley-davidson-flss-softail-bundnerbike-custom-12632297`,
-  },
-  {
-    id: "12265647",
-    name: "Harley-Davidson FLSTFBS Fat Boy CVO Custom",
-    highlights: "Custom Dragster Umbau · CVO 110 Screaming Eagle · Komplett Auspuffanlage · Heckumbau",
-    description: `Custom Dragster Fat Bobber von PM American Cycles
-Kompletter Umbau Geprüft und Alles Eingetragen
-CVO 110 Screaming Eagle
-Jekyll & Hyde Katalysator + Hauptschalldämpfer (Klappensteuerung)
-Brachialer Sound (Legal mit Gutachten)
-Hinterradschwinge Umgebaut (Eingetragen)
-PM Bremsanlage (Eingetragen)
-RSD Clip on Lenker (Eingetragen)
-Spezial Felgen (Eingetragen)
-PM Fussraster (Eingetragen)
-Custom Paintjob
-Diverse Carbon Teile
-LED Scheinwerfer
-LED Blinker Vorne + Hinten
-Kennzeichen Seitlich
-Spezial Sattel
-240ER Reifen Hinten
-
-Dragster Harley mit Brachialem Sound
-Einzelstück`,
-    price: "CHF 22'900.–",
-    firstRegistration: "03.2016",
-    fuel: "Benzin",
-    km: "4'500 km",
-    power: "92 PS (68 kW)",
-    transmission: "Schaltgetriebe manuell",
-    image: IMG("647/12265647/1527298562.jpeg"),
-    images: [
-      "https://listing-images.motoscout24.ch/listing/647/12265647/5526451.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/647/12265647/815111349.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/647/12265647/1434557601.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/647/12265647/1750323625.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/647/12265647/840222439.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/647/12265647/300077470.jpeg?w=1920",
-      "https://listing-images.motoscout24.ch/listing/647/12265647/1275791906.jpeg?w=1920",
-    ],
-    detailUrl: `${BASE}/harley-davidson-flstfbs-fat-boy-cvo-custom-12265647`,
   },
 ];
 
