@@ -1,5 +1,5 @@
 // Mock-Daten der aktuellen Rabbit-Cars Occasionen (Stand: Scrape von
-// autoscout24.ch/de/s/seller-63793, 11.09.2026).
+// autoscout24.ch/de/s/seller-63793, 22.10.2026).
 // Später wird dieses Modul durch einen echten Fetch ersetzt (AS24 Händler-Feed / Listing API).
 // Struktur bleibt gleich, damit der Umbau nur diese Datei betrifft.
 
@@ -39,45 +39,343 @@ const IMG2 = (path: string) => `https://listing-images.autoscout24.ch/listing/${
 
 const rawVehicles: Omit<Vehicle, "category">[] = [
   {
-    id: "20800812",
-    name: "BMW X1 xDrive 20d 48V M Sport",
-    highlights: "Wunderschöne Farbkombination · Garantie · CH-Fahrzeug · 1. Hand · Nahezu Vollausstattung",
-    description: `Wunderschöne Farbkombination
-Nahezu Vollausstattung
-CH Fahrzeug
-Gratis Service
+    id: "20923459",
+    name: "VW T6 Multivan 2.0 TDI Trendline 4Motion DSG Bulli",
+    highlights: "Anhängerkupplung · DSG · 4Motion Allrad · Rückfahrkamera · 12 Monate Garantie",
+    description: `VW T6 Bulli 4MOTION
+Ab Service
 12MONATE Garantie
-360GRAD Kamera + Rückfahrkamera
-LED Scheinwerfer
-M Packet
-Harman Kardon Soundsystem
-Glas-Schiebedach
-Head-Up Display
-Keyless Entry + Go
+8FACH Bereift
+DSG Automatik Getriebe
+4MOTION Allrad
+DAB+ Radio
+Bluetooth
+Rückfahrkamera
+Anhängerkupplung
+PDC
 UVM!!!
 
 Leasing/Kredit/Eintausch Möglich
 !!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
 Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
 Irrtümer und Zwischenverkauf Vorbehalten`,
-    price: "CHF 37'900.–",
-    firstRegistration: "03.2023",
-    fuel: "Mild-Hybrid Diesel/Elektro",
-    km: "71'000 km",
-    power: "149 PS (110 kW)",
-    transmission: "Halbautomat",
-    consumption: "5 l/100 km",
-    image: IMG2("812/20800812/1120428497.jpeg"),
+    price: "CHF 32'900.–",
+    firstRegistration: "05.2019",
+    fuel: "Diesel",
+    km: "122'000 km",
+    power: "150 PS (110 kW)",
+    transmission: "Halbautomatisches Getriebe",
+    consumption: "10.8 l/100 km",
+    image: IMG("459/20923459/1687770564.jpeg"),
     images: [
-      "https://images.autoscout24.ch/public/listing/812/20800812/1727894040.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/812/20800812/1368367849.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/812/20800812/1716763429.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/812/20800812/2050418685.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/812/20800812/148253747.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/812/20800812/84694806.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/812/20800812/1296100810.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/674439932.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/1627858950.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/36768458.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/2045860561.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/316808466.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/1617542599.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/459/20923459/467433650.jpeg?w=1920",
     ],
-    detailUrl: `${BASE}/20800812`,
+    detailUrl: `${BASE}/20923459`,
+  },
+  {
+    id: "20923273",
+    name: "Jeep Grand Cherokee 6.4 V8 HEMI SRT8 Automatic",
+    highlights: "Sehr gepflegt · 8-fach bereift · Garantie · Frisch ab Service · Frisch ab MFK",
+    description: `All Black
+Sehr Gepflegtes Fahrzeug
+Frisch ab Service
+Frisch ab MFK
+12MONATE Garantie
+Spezial Auspuffanlage mit Beiblatt
+Trittbretter
+Tolle Ausstattung wie:
+Glas-Schiebedach
+Carbon Applikationen
+Sitzheizung + Sitzkühlung
+Lenkradheizung
+Keyless Entry+go
+Rückfahrkamera
+Harman Kardon Soundsystem
+Alcantara Dachhimmel
+Anhängerkupplung
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 32'900.–",
+    firstRegistration: "01.2017",
+    fuel: "Benzin",
+    km: "129'000 km",
+    power: "468 PS (344 kW)",
+    transmission: "Automat",
+    consumption: "13.5 l/100 km",
+    image: IMG("273/20923273/606205843.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/273/20923273/790710474.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/273/20923273/1349479004.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/273/20923273/1902825883.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/273/20923273/875561538.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/273/20923273/1753238349.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/273/20923273/1244187646.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/273/20923273/1615773211.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20923273`,
+  },
+  {
+    id: "20922157",
+    name: "Audi RS Q3 Sportback quattro S tronic",
+    highlights: "Full Black · Vollausstattung · B&O Soundsystem · Abstandsregeltempomat · Schiebedach",
+    description: `Wunderschöner Audi RS Q3 Sportback
+8FACH Bereift
+12MONATE Garantie
+Ab MFK + ab Service
+Vollausstattung wie:
+21" Felgen
+B&O Soundsystem
+Carbon Applikation
+Nappa Leder mit Rautensteppung
+Abstandsregeltempomat
+Glas-Schiebedach
+360GRAD Kamera + Rückfahrkamera
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 36'900.–",
+    firstRegistration: "12.2020",
+    fuel: "Benzin",
+    km: "133'000 km",
+    power: "400 PS (294 kW)",
+    transmission: "Halbautomatisches Getriebe",
+    consumption: "10.3 l/100 km",
+    image: IMG("157/20922157/1771580832.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/157/20922157/117520216.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/157/20922157/1739293304.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/157/20922157/14599823.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/157/20922157/1074758572.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/157/20922157/557671334.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/157/20922157/1442906882.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/157/20922157/721578655.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20922157`,
+  },
+  {
+    id: "20922097",
+    name: "Audi Q5 40 TDI sport quattro S-tronic",
+    highlights: "Tolle Ausstattung · Gepflegter Zustand · 360° Kamera · Glas-Schiebedach · S-Line",
+    description: `Wunderschöner Audi Q5 40TDI
+Gepflegter Zustand
+Ab MFK + ab Service
+12MONATE Garantie
+Tolle Ausstattung wie:
+Nappa Leder mit Rautensteppung
+360GRAD Kamera + Rückfahrkamera
+S-Line Interieur+exterieur
+Panorama-Glasdach
+Elekt. Sitze + Memory
+Sitzheizung
+LED Matrix Scheinwerfer
+Totwinkelassistent + Laneassist
+Abstandsregeltempomat
+Keyless Entry+go
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 28'900.–",
+    firstRegistration: "01.2020",
+    fuel: "Diesel",
+    km: "131'000 km",
+    power: "190 PS (140 kW)",
+    transmission: "Halbautomatisches Getriebe",
+    consumption: "5.4 l/100 km",
+    image: IMG("97/20922097/439536409.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/97/20922097/1492837560.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/97/20922097/906064450.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/97/20922097/739384842.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/97/20922097/1620303129.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/97/20922097/184384172.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/97/20922097/508234955.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/97/20922097/714067311.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20922097`,
+  },
+  {
+    id: "20922042",
+    name: "Land Rover Range Rover Velar D 300 First Edition Automatic",
+    highlights: "Velar D300 First Edition · Distanzscheiben · 22\" Felgen · Vollausstattung · Garantie",
+    description: `Wunderschöner Velar D300 First Edition R-Dynamic
+12MONATE Garantie
+Ab Service + ab MFK
+Distanzscheiben (Eingetragen)
+Vollausstattung:
+Luftfahrwerk
+Massage Sitze
+Sitzheizung+sitzkühlung
+Panoramadach
+Rückfahrkamera
+22" Felgen
+R-Dynamic
+Elekt. Sitze
+Meridian Soundsystem
+Keyless Entry+go
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 27'900.–",
+    firstRegistration: "03.2018",
+    fuel: "Diesel",
+    km: "155'000 km",
+    power: "300 PS (221 kW)",
+    transmission: "Automat",
+    consumption: "6.4 l/100 km",
+    image: IMG("42/20922042/1546206875.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/42/20922042/2092870246.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/42/20922042/626142948.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/42/20922042/554601585.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/42/20922042/440798533.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/42/20922042/792159327.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/42/20922042/1745227640.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/42/20922042/1752488497.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20922042`,
+  },
+  {
+    id: "20866980",
+    name: "Volvo XC60 T6 AWD Summum Geartronic",
+    highlights: "Frisch ab MFK · Ab Service · 8-fach bereift · Neue Reifen · Nahezu Vollausstattung",
+    description: `Gepflegtes Fahrzeug
+Ab MFK + ab Service
+8FACH Bereift
+Neue Reifen
+Nahezu Vollausstattung wie:
+BLIS
+Harman Kardon Soundsystem
+Lane Assist
+Rückfahrkamera
+Glasdach
+Leder
+Sitzheizung
+UVM!!!
+
+Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 14'900.–",
+    firstRegistration: "06.2016",
+    fuel: "Benzin",
+    km: "192'000 km",
+    power: "306 PS (225 kW)",
+    transmission: "Automat",
+    consumption: "7.7 l/100 km",
+    image: IMG("980/20866980/923986757.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/980/20866980/1463781477.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/980/20866980/1813722161.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/980/20866980/1674925690.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/980/20866980/273536179.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/980/20866980/376775143.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/980/20866980/1553395312.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/980/20866980/1202890584.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20866980`,
+  },
+  {
+    id: "20864046",
+    name: "VW Golf R32 4Motion",
+    highlights: "Wenig Kilometer · Nahezu Neuzustand · KW Fahrwerk · R8 Schalensitze · DSG Automatik",
+    description: `Wunderschöner R32 mit Wenig Kilometer
+Nahezu Neuzustand
+Ab MFK + ab Service
+Servicegepflegt Stets bei VW Vertretung
+KW Fahrwerk (Eingetragen)
+Spezial Felgen (Eingetragen)
+R8 Schalensitze
+DSG Automatikgetriebe
+Blau/Violet Metallic
+Schiebedach
+Sitzheizung
+Multifunktionslenkrad
+Grosses Navi
+UVM!!!
+
+Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 29'900.–",
+    firstRegistration: "03.2006",
+    fuel: "Benzin",
+    km: "88'000 km",
+    power: "250 PS (184 kW)",
+    transmission: "Automat",
+    consumption: "9.8 l/100 km",
+    image: IMG("46/20864046/678861958.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/46/20864046/761229262.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/46/20864046/1946318872.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/46/20864046/679206467.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/46/20864046/806529818.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/46/20864046/516574316.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/46/20864046/778555730.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/46/20864046/1915065617.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20864046`,
+  },
+  {
+    id: "20820531",
+    name: "VW Golf 2.0 TSI R 4Motion DSG",
+    highlights: "8-fach bereift · Top gepflegt · Akrapovič Auspuffanlage · Facelift · Garantie",
+    description: `Sehr Gepflegter VW Golf R Facelift
+8FACH Bereift
+AKRAPOVIC Auspuffanlage
+12MONATE Garantie
+Top Ausstattung wie:
+Keyless Entry + Go
+Abstandsregeltempomat
+LED Scheinwerfer
+Carbonleder
+DAB+ / Navi / Bluetooth
+Sportbremse RS3
+Rückfahrkamera
+UVM!!!
+
+Leasing/Kredit/Eintausch Möglich
+!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
+Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
+Irrtümer und Zwischenverkauf Vorbehalten`,
+    price: "CHF 23'500.–",
+    firstRegistration: "07.2020",
+    fuel: "Benzin",
+    km: "137'000 km",
+    power: "301 PS (221 kW)",
+    transmission: "Halbautomatisches Getriebe",
+    consumption: "7.2 l/100 km",
+    image: IMG("531/20820531/1281094270.jpeg"),
+    images: [
+      "https://images.autoscout24.ch/public/listing/531/20820531/569062064.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/531/20820531/419675847.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/531/20820531/883329417.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/531/20820531/625634990.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/531/20820531/200686711.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/531/20820531/1275928789.jpeg?w=1920",
+      "https://images.autoscout24.ch/public/listing/531/20820531/528413564.jpeg?w=1920",
+    ],
+    detailUrl: `${BASE}/20820531`,
   },
   {
     id: "20801939",
@@ -219,9 +517,10 @@ Irrtümer und Zwischenverkauf Vorbehalten`,
   {
     id: "20749056",
     name: "Mercedes-Benz G 500 AMG Line 9G-Tronic",
-    highlights: "Emerald Green · Frisch ab MFK · 12 Monate Garantie · Burmester Soundsystem · AMG Line",
+    highlights: "Emerald Green · 22\" Vossen Räder · Frisch ab MFK · 12 Monate Garantie · Burmester Soundsystem · AMG Line",
     description: `Wunderschöner G500 mit AMG Line
 Emerald Green Metallic
+8FACH mit 22" Vossen Räder
 Frisch ab MFK
 12MONATE Garantie
 Tolle Ausstattung wie:
@@ -238,7 +537,7 @@ Leasing/Kredit/Eintausch Möglich
 !!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
 Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
 Irrtümer und Zwischenverkauf Vorbehalten`,
-    price: "CHF 89'900.–",
+    price: "CHF 93'900.–",
     firstRegistration: "11.2018",
     fuel: "Benzin",
     km: "117'000 km",
@@ -255,48 +554,6 @@ Irrtümer und Zwischenverkauf Vorbehalten`,
       "https://images.autoscout24.ch/public/listing/56/20749056/1167286194.jpeg?w=1920",
     ],
     detailUrl: `${BASE}/20749056`,
-  },
-  {
-    id: "20732126",
-    name: "Ferrari 488 GTB 3.9 V8",
-    highlights: "Frisch ab MFK · Neue Reifen · Carbon Applikationen · JBL Soundsystem · Alcantara Ausstattung",
-    description: `Schöner 488 Gtb mit Dezenter Farbkombination
-Frisch ab MFK
-Frisch ab Service
-Neue Sommerreifen
-12MONATE Garantie
-Alcantara Leder Ausstattung
-Kontrastnähte in Weiss
-JBL Soundsystem
-Carbon Applikationen
-Carbon Lenkrad
-Carbon Side Airsplitter
-Rückfahrkamera + Frontkamera
-Apple Carplay
-UVM!!!
-
-Leasing/Kredit/Eintausch Möglich
-!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
-Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
-Irrtümer und Zwischenverkauf Vorbehalten`,
-    price: "CHF 159'900.–",
-    firstRegistration: "10.2016",
-    fuel: "Benzin",
-    km: "69'900 km",
-    power: "670 PS (493 kW)",
-    transmission: "Halbautomat",
-    consumption: "11.4 l/100 km",
-    image: IMG2("126/20732126/1878011145.jpeg"),
-    images: [
-      "https://images.autoscout24.ch/public/listing/126/20732126/1135997214.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/126/20732126/184795392.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/126/20732126/1560214160.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/126/20732126/766651775.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/126/20732126/2064668048.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/126/20732126/353514198.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/126/20732126/616820976.jpeg?w=1920",
-    ],
-    detailUrl: `${BASE}/20732126`,
   },
   {
     id: "20722738",
@@ -345,59 +602,6 @@ Irrtümer und Zwischenverkauf Vorbehalten`,
     detailUrl: `${BASE}/20722738`,
   },
   {
-    id: "20619415",
-    name: "Porsche Macan Turbo Performance PDK",
-    highlights: "2 Jahre Porsche Approved Garantie · Frisch ab Service · 8-fach bereift",
-    description: `Wunderschöner Porsche Macan Turbo Performance PDK
-Tolle Farbkombination
-Bis 5.2028 Porsche Approved Vollgarantie
-Sehr Gepflegter Zustand
-Seriöser Vorbesitzer
-8FACH Bereift mit Porsche Winter Kompletträder
-Frisch ab MFK
-Frisch ab Porsche Service
-Neue Bremsen Vorne + Hinten
-Neue Reifen
-Nahezu Vollaustattung wie:
-Luftfahrwerk
-LED Scheinwerfer
-360GRAD Kamera + Rückfahrkamera
-Abstandsregeltempomat
-Sport Auspuffanlage
-Glas-Schiebedach
-Alcantara Dachhimmel
-Carbon Applikationen
-Vollleder Ausstattung Bicolor
-18 Weg Elekt. Verstellbare Sitze
-21" Felgen
-Sport Chrono Packet
-Bose Soundsystem
-UVM!!!
-
-Leasing/Kredit/Eintausch Möglich
-!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
-Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
-Irrtümer und Zwischenverkauf Vorbehalten`,
-    price: "CHF 41'900.–",
-    firstRegistration: "01.2017",
-    fuel: "Benzin",
-    km: "84'000 km",
-    power: "440 PS (324 kW)",
-    transmission: "Halbautomat",
-    consumption: "9.7 l/100 km",
-    image: IMG("415/20619415/960173959.jpeg"),
-    images: [
-      "https://images.autoscout24.ch/public/listing/415/20619415/1484492922.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/415/20619415/938863563.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/415/20619415/565708822.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/415/20619415/1628197342.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/415/20619415/1292444734.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/415/20619415/1904563913.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/415/20619415/1133147217.jpeg?w=1920",
-    ],
-    detailUrl: `${BASE}/20619415`,
-  },
-  {
     id: "20676398",
     name: "Mercedes-Benz AMG GT 4 53 4Matic+ Speedshift TCT Special Edition",
     highlights: "Special Edition · Facelift · Sehr gepflegt · Frisch ab MFK · Garantie · Frisch ab Mercedes Service",
@@ -444,43 +648,6 @@ Irrtümer und Zwischenverkauf Vorbehalten`,
       "https://images.autoscout24.ch/public/listing/398/20676398/403718148.jpeg?w=1920",
     ],
     detailUrl: `${BASE}/20676398`,
-  },
-  {
-    id: "20619260",
-    name: "Ford Fiesta 1.0 SCTi Vignale",
-    highlights: "Frisch ab MFK · Garantie · Navi · Bluetooth · PDC · 8-fach bereift",
-    description: `Gepflegter Ford Fiesta
-12MONATE Garantie
-Frisch ab MFK
-Navigationssystem
-Bluetooth
-PDC Hinten
-Tempomat
-8FACH Bereift
-UVM!!!
-
-Leasing/Kredit/Eintausch Möglich
-!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
-Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
-Irrtümer und Zwischenverkauf Vorbehalten`,
-    price: "CHF 9'900.–",
-    firstRegistration: "09.2018",
-    fuel: "Benzin",
-    km: "86'000 km",
-    power: "100 PS (74 kW)",
-    transmission: "Schaltgetriebe",
-    consumption: "5 l/100 km",
-    image: IMG("260/20619260/186452542.jpeg"),
-    images: [
-      "https://images.autoscout24.ch/public/listing/260/20619260/1154585408.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/260/20619260/1452603817.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/260/20619260/1554259999.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/260/20619260/1125369915.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/260/20619260/842140007.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/260/20619260/1444436922.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/260/20619260/375694192.jpeg?w=1920",
-    ],
-    detailUrl: `${BASE}/20619260`,
   },
   {
     id: "20619082",
@@ -879,47 +1046,6 @@ Irrtümer und Zwischenverkauf Vorbehalten`,
       "https://images.autoscout24.ch/public/listing/833/12834833/1356329611.jpeg?w=1920",
     ],
     detailUrl: `${BASE}/12834833`,
-  },
-  {
-    id: "12411976",
-    name: "Lamborghini Murciélago 6.2 Coupé",
-    highlights: "Le Mans Edition · CH-Fahrzeug · Servicehistorie komplett bei Lamborghini",
-    description: `Wunderschöner und Seltener Murcielago 6.2 LP580 Le Mans Edition
-CH-Fahrzeug mit Kompletter Service Historie Stets bei Lamborghini
-Sehr Gepflegt aus Seriösem Vorbesitz
-Neue Kupplung / Neue Reifen
-Fahrzeug Wird Frisch ab Service bei Lamborghini Verkauft
-Originaler Le Mans Edition by Affolter mit:
-Work Felgen in Wert von 15'000.- (Eingetragen)
-Italcardesign Heckspoiler (Inkl. Rückfahrkamera) (Eingetragen)
-Originalfelgen Ebenfalls Vorhanden
-Spezial Multimediasystem mit Bluetooth
-Liftsystem für Vorderachse (ab Werk)
-
-Eine Absolute Rarität mit Wertzuwachs
-
-Kredit/Eintausch Möglich
-!!!Bei Uns Bezahlen Sie Keinerlei Ablieferungskosten!!!
-Wir Sind Momentan auf der Suche nach Geprüften und Gepflegten Fahrzeugen!!!
-Irrtümer und Zwischenverkauf Vorbehalten`,
-    price: "CHF 229'800.–",
-    firstRegistration: "05.2004",
-    fuel: "Benzin",
-    km: "57'000 km",
-    power: "580 PS (426 kW)",
-    transmission: "Halbautomat",
-    consumption: "21.5 l/100 km",
-    image: IMG("976/12411976/387090395.jpeg"),
-    images: [
-      "https://images.autoscout24.ch/public/listing/976/12411976/1185404203.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/976/12411976/536310184.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/976/12411976/1831079664.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/976/12411976/2013823688.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/976/12411976/325775465.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/976/12411976/1142564762.jpeg?w=1920",
-      "https://images.autoscout24.ch/public/listing/976/12411976/799942754.jpeg?w=1920",
-    ],
-    detailUrl: `${BASE}/12411976`,
   },
 ];
 
